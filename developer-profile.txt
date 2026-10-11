@@ -1,0 +1,500 @@
+# DEVELOPER PROFILE
+Compiled from Suman Dey's eight uploaded CV/resume versions  
+Source of truth: Uploaded resumes covering Full Stack Development, Frontend Engineering, Backend Engineering, Software Development, Applied AI/ML, and Agentic AI.  
+Date compiled: 11 October 2026
+
+================================================================================
+## IDENTITY
+================================================================================
+
+Full name:        Suman Dey
+First name:       Suman
+Last name:        Dey
+Initials:         SD
+Pronouns:         Not specified
+Role (primary):   Software Engineer / Full Stack Developer
+
+Also presented as:
+  - Full Stack Developer
+  - Software Development Engineer
+  - Backend & Systems Engineer
+  - Applied AI/ML Engineer
+  - Agentic AI Engineer
+  - Frontend Developer
+  - AI-Powered Product Builder
+
+Greeting:         Hey, I'm Suman
+Location:         Bhubaneswar, Odisha, India
+Timezone:         Asia/Kolkata (IST)
+Portfolio URL:    https://sumandey.in
+GitHub:           https://github.com/sumandey7684
+LinkedIn:         https://linkedin.com/in/sumandey7684
+Email:            sumandey7684@gmail.com
+Phone:            +91-7684093868
+
+Site title:       Suman Dey — Software Engineer
+Meta description: Not specified in the resumes.
+Package name:     Not specified.
+Profile images:   Not specified.
+Banner:           Not specified.
+Favicon:          Not specified.
+
+## TAGLINE
+
+I build full-stack applications, intelligent AI systems, and reliable software infrastructure.
+
+Alternative positioning:
+  - Building AI-powered products and developer tools.
+  - Engineering reliable backend systems and intelligent workflows.
+  - Turning ideas into functional, production-oriented software.
+
+================================================================================
+## CONTACT
+================================================================================
+
+Email:       sumandey7684@gmail.com
+Phone:       +91-7684093868
+Portfolio:   https://sumandey.in
+GitHub:      https://github.com/sumandey7684
+LinkedIn:    https://linkedin.com/in/sumandey7684
+
+X/Twitter:   Linked from some resume versions, but the exact URL is not
+             established by the extracted resume text.
+LeetCode:    Listed in the Agentic AI resume, but the exact URL is not
+             established by the extracted resume text.
+Resume:      Multiple role-specific PDF versions are available.
+             A single public resume URL is not specified.
+
+Contact page copy:
+  Suggested direction:
+    - Open to software engineering and AI engineering opportunities.
+    - Interested in meaningful projects, technical collaborations, and
+      developer-focused products.
+    - Available for relevant internship and entry-level opportunities.
+
+Availability:
+  Target roles include internships and entry-level engineering positions.
+  Current availability is not explicitly confirmed by the resumes.
+
+================================================================================
+## ABOUT
+================================================================================
+
+I'm Suman Dey, a Computer Science and Engineering student who builds full-stack applications, AI-powered products, and backend systems.
+
+I work with technologies including React, Next.js, TypeScript, JavaScript, Python, Node.js, FastAPI, and SQL databases. My projects span user-facing web applications, API-driven platforms, agentic AI workflows, semantic code retrieval, and persistent storage systems.
+
+I'm particularly interested in applied AI, agent orchestration, backend engineering, database internals, and developer tools. I enjoy working across the software stack, from designing application interfaces and integrating APIs to building reliable execution workflows and understanding how data is stored and recovered.
+
+My experience includes an AI/ML internship at MindBrain Innovation Pvt. Ltd., where I worked on multi-agent workflows, MCP tooling, and an AI-powered news-to-podcast application.
+
+Developer snapshot:
+  - Building full-stack web applications.
+  - Developing agentic AI systems and LLM-powered tools.
+  - Exploring backend engineering and database internals.
+  - Engineering developer-focused applications.
+  - Working with semantic retrieval and retrieval-augmented generation.
+  - Studying software engineering fundamentals and systems design.
+
+Current education:
+  B.Tech in Computer Science and Engineering
+  Trident Academy of Technology
+  2023–2027
+  CGPA: 7.56
+
+Current status:
+  Available:     Not explicitly specified.
+  Now learning:  Not explicitly specified.
+  Now building:  Projects documented in the uploaded resumes.
+  Career focus:  Software engineering, full-stack development, backend
+                 systems, applied AI, and agentic AI.
+
+================================================================================
+## EXPERIENCE
+================================================================================
+
+### 1. AI/ML Intern — MindBrain Innovation Pvt. Ltd.
+
+Period:   June 2026 – July 2026
+Location: Bhubaneswar, Odisha, India
+
+Responsibilities and contributions:
+
+- Built a multi-agent workflow using LangGraph with specialized Research, Code, and Document agents.
+- Integrated FAISS-based retrieval to support contextual information access and semantic search.
+- Developed a Python MCP server using the MCP SDK and STDIO transport, exposing six reusable tools for integration with Claude Desktop and LangChain.
+- Developed Podcast Buddy, a news-to-podcast pipeline that generates two-host audio episodes from live news sources.
+- Integrated Gemini, LangChain, Hugging Face embeddings, Edge TTS, and FFmpeg for AI-assisted dialogue generation and audio production.
+- Worked with FastAPI backend services and a Next.js frontend to connect AI workflows with a user-facing application.
+
+Core technologies:
+  Python, LangGraph, LangChain, MCP SDK, FAISS, Gemini, Hugging Face
+  embeddings, FastAPI, Next.js, Edge TTS, FFmpeg.
+
+================================================================================
+## EDUCATION
+================================================================================
+
+### B.Tech — Computer Science and Engineering
+
+Institution: Trident Academy of Technology
+Location:    Bhubaneswar, Odisha, India
+Duration:    2023–2027
+CGPA:        7.56
+
+Relevant coursework:
+  - Data Structures and Algorithms
+  - Database Management Systems
+  - Operating Systems
+  - Computer Networks
+  - Artificial Intelligence
+  - Machine Learning
+
+================================================================================
+## SKILLS
+================================================================================
+
+### Programming Languages
+  JavaScript, TypeScript, Python, C++, Java, SQL
+
+### Frontend Engineering
+  React, Next.js, HTML5, CSS3, Tailwind CSS, Responsive Design,
+  Component Architecture, Data Visualization, UI Integration
+
+### Backend Engineering
+  Node.js, Express.js, FastAPI, REST APIs, JSON, HTTP,
+  Asynchronous Programming, API Integration, Error Handling
+
+### Databases and Storage Systems
+  PostgreSQL, MySQL, MongoDB, SQLite, Vector Databases,
+  B+Tree Architecture, Buffer Pool Management, LRU Eviction,
+  Write-Ahead Logging, ARIES Recovery, Persistent Indexing
+
+### Artificial Intelligence and Machine Learning
+  LLMs, Generative AI, Agentic AI, Prompt Engineering,
+  Function Calling, Tool Calling, Structured Outputs,
+  Retrieval-Augmented Generation (RAG), Semantic Search,
+  Embeddings, LangChain, LangGraph, FAISS, FastEmbed, Gemini
+
+### AI Infrastructure and Developer Tools
+  Model Context Protocol (MCP), SQLite-Vec, Tree-sitter,
+  Language Server Protocol (LSP), Semantic Code Retrieval,
+  Code Intelligence, Agent Orchestration, Persistent Agent State
+
+### Systems Engineering
+  B+Trees, Slotted Pages, Buffer Pools, WAL, ARIES,
+  Checkpointing, Crash Recovery, Concurrency, POSIX I/O,
+  Fault Injection, Performance Benchmarking
+
+### Tools and Platforms
+  Git, GitHub, GitHub Actions, CMake, Docker, Postman,
+  Vercel, Netlify, Bun
+
+Note:
+  These skills are consolidated from the uploaded resumes. Individual
+  technologies appear in different role-specific versions and should
+  be represented according to the requirements of the target role.
+
+================================================================================
+## PROJECTS
+================================================================================
+
+### 1. LoopCode — Autonomous AI Software Engineering Orchestrator
+
+Category:     Agentic AI, Developer Tools, Backend Engineering
+Technologies: TypeScript, Bun, LangChain, SQLite, Tree-sitter,
+              LSP, FastEmbed, SQLite-Vec
+
+Description:
+
+An agentic software engineering system designed to decompose software goals into directed task graphs, execute independent tasks in parallel, and coordinate work through persistent state.
+
+Key features:
+  - DAG-based task planning and task decomposition.
+  - Parallel execution of independent development tasks.
+  - Persistent SQLite state and resumable execution.
+  - Tool execution for compilation, linting, testing, and verification.
+  - Semantic codebase indexing and context retrieval.
+  - Failure analysis, retries, execution budgets, and automated replanning.
+  - Structured outputs and task-status validation.
+
+Positioning:
+  Autonomous software engineering, AI agent orchestration, and
+  reliable multi-step execution.
+
+### 2. Flare — Graph-First AI Coding and Development Platform
+
+Category:     AI Developer Tools, Full Stack, Code Intelligence
+Technologies: TypeScript, React, Node.js, LLMs, Vector Search,
+              MCP, SQLite
+
+Description:
+
+A graph-first AI coding platform that combines codebase intelligence, semantic retrieval, structured project context, and tool orchestration to support context-aware software development workflows.
+
+Key features:
+  - Code and knowledge graph integration.
+  - Semantic retrieval across files, symbols, and dependencies.
+  - Structured project metadata and execution history.
+  - Context injection for AI planning and execution agents.
+  - MCP-based tooling and external capability integration.
+
+Positioning:
+  AI-assisted development, code intelligence, and semantic retrieval.
+
+### 3. AstraDB — Embeddable B+Tree Storage Engine
+
+Category:     Systems Engineering, Database Internals, C++
+Technologies: C++20, B+Tree, WAL, ARIES, Buffer Pool, LRU
+
+Description:
+
+A persistent, single-file B+Tree storage engine designed around database storage fundamentals, efficient indexing, buffer-pool management, and crash recovery.
+
+Key features:
+  - 4 KB slotted pages and persistent indexing.
+  - Buffer-pool management and LRU eviction.
+  - Dirty-page handling and write-ahead logging.
+  - ARIES recovery with analysis, redo, and undo.
+  - Compensation log records and checkpointing.
+  - CRC32-based log-tail validation.
+  - Multi-process fault injection and simulated fsync/pwrite failures.
+
+Reported benchmarks:
+  - 427K+ point gets per second.
+  - 405K+ range scans per second.
+
+Note:
+  Benchmark figures are reported in the uploaded resumes and have not
+  been independently verified here.
+
+Positioning:
+  Database internals, persistence, crash consistency, and performance.
+
+### 4. Podcast Buddy — AI News-to-Podcast Platform
+
+Category:     Applied AI, Full Stack Development, Media Processing
+Technologies: Next.js, FastAPI, Gemini, LangChain, Hugging Face
+              embeddings, Edge TTS, FFmpeg
+
+Description:
+
+An AI-powered platform that converts live news into two-host podcast episodes through automated dialogue generation, text-to-speech synthesis, and audio processing.
+
+Key features:
+  - Live news ingestion.
+  - AI-generated dialogue and episode content.
+  - Two-host audio generation using Edge TTS.
+  - FFmpeg-based audio processing.
+  - Asynchronous FastAPI endpoints.
+  - Next.js frontend for user interaction and playback.
+
+Positioning:
+  End-to-end AI product engineering and multimedia automation.
+
+### 5. RailGaadi — Real-Time Railway Journey Intelligence Platform
+
+Category:     Full Stack, Frontend Engineering, Geospatial Applications
+Technologies: React, TypeScript, REST APIs, MapLibre, MapTiler,
+              OpenWeather, OpenTopography, Overpass, Turf.js
+
+Description:
+
+A railway journey platform that brings train tracking, route visualization, station information, and journey progress into an interactive interface.
+
+Key features:
+  - Real-time train tracking and running status.
+  - ETA and delay information.
+  - Current and next station information.
+  - Interactive route visualization.
+  - Animated train markers and station highlighting.
+  - Camera-follow mode and map controls.
+  - Integration with multiple railway, weather, and geospatial services.
+  - Responsive layouts and shareable journey views.
+
+Positioning:
+  Frontend engineering, external API integration, and geospatial UI.
+
+### 6. PDFly — Browser-Based PDF Processing Platform
+
+Category:     Frontend Engineering, Web Applications
+Technologies: React, TypeScript, Node.js
+
+Description:
+
+A browser-based PDF processing platform designed around modular components and asynchronous client-side file processing.
+
+Key features:
+  - Multiple PDF operations.
+  - Modular React and TypeScript components.
+  - Client-side processing without server dependency for the core workflow.
+  - Optimized asynchronous processing and memory usage for large files.
+
+Positioning:
+  Browser-based tooling, frontend performance, and file processing.
+
+### 7. ChatWrapped — WhatsApp Chat Analytics
+
+Category:     Frontend Engineering, Data Visualization
+Technologies: React, JavaScript, Data Visualization
+
+Description:
+
+A dashboard that transforms exported WhatsApp conversations into interactive analytics and visual summaries.
+
+Key features:
+  - Conversation statistics and message trends.
+  - Activity patterns and streaks.
+  - Interactive charts and analytics.
+  - PDF report generation.
+  - Client-side data processing.
+  - Privacy-focused local processing.
+  - Responsive desktop and mobile layouts.
+
+Positioning:
+  Data visualization, frontend architecture, and privacy-conscious UX.
+
+### 8. Tale — Wellness and Mental Well-being Platform
+
+Category:     Frontend Engineering, UI/UX Design
+Technologies: React, UI/UX, Responsive Design
+
+Description:
+
+A responsive web application focused on structured layouts, consistent visual design, and interactive user experiences.
+
+Key features:
+  - Reusable UI components.
+  - Design-system-oriented layouts.
+  - Interactive cards and dashboards.
+  - Progress insights and wellness journeys.
+  - Responsive product sections.
+  - Attention to typography, spacing, and visual hierarchy.
+
+Positioning:
+  UI/UX implementation, design systems, and frontend development.
+
+================================================================================
+## TECHNICAL INTERESTS
+================================================================================
+
+Primary interests:
+  - Applied AI and agentic systems.
+  - LLM-powered developer tools.
+  - Backend engineering and API architecture.
+  - Database internals and storage engines.
+  - Retrieval-augmented generation and semantic search.
+  - Full-stack product development.
+  - Reliable execution workflows and systems performance.
+
+================================================================================
+## GITHUB AND DEVELOPER PRESENCE
+================================================================================
+
+GitHub username:  sumandey7684
+GitHub profile:   https://github.com/sumandey7684
+Portfolio:        https://sumandey.in
+LinkedIn:         https://linkedin.com/in/sumandey7684
+
+Open-source contributions:
+  Not quantified in the uploaded resumes.
+
+GitHub activity:
+  Contribution count not specified in the uploaded resumes.
+
+LeetCode:
+  Listed in one resume version. Exact profile URL and current activity
+  are not established by the extracted resume text.
+
+Public project URLs:
+  Not consistently specified in the uploaded resumes. Retrieve verified
+  repository and deployment URLs before publishing project links.
+
+================================================================================
+## PROFILE POSITIONING BY ROLE
+================================================================================
+
+Full Stack Developer:
+  Emphasize Podcast Buddy, RailGaadi, PDFly, React, Next.js,
+  TypeScript, FastAPI, Node.js, REST APIs, and databases.
+
+Agentic AI Engineer:
+  Emphasize LoopCode, Flare, LangGraph, LangChain, MCP,
+  semantic retrieval, tool calling, agent state, and verification.
+
+Applied AI/ML Engineer:
+  Emphasize the MindBrain internship, multi-agent workflows,
+  Podcast Buddy, RAG, embeddings, FAISS, and Gemini.
+
+Backend Engineer:
+  Emphasize AstraDB, LoopCode, Flare, API engineering, persistence,
+  concurrency, SQLite, PostgreSQL, and system reliability.
+
+Software Development Engineer:
+  Emphasize AstraDB, data structures and algorithms, database
+  internals, performance testing, crash recovery, and software
+  engineering fundamentals.
+
+Frontend Developer:
+  Emphasize RailGaadi, ChatWrapped, Tale, React, Next.js,
+  TypeScript, responsive interfaces, UI/UX, and data visualization.
+
+================================================================================
+## FIELDS NOT ESTABLISHED BY THE RESUMES
+================================================================================
+
+The following details should not be invented when creating the portfolio:
+
+- Pronouns.
+- Personal quote or favorite quotation.
+- Current availability or hiring status.
+- Exact X/Twitter and LeetCode profile URLs.
+- Public project deployment and repository URLs.
+- GitHub contribution statistics.
+- Quantified open-source contributions.
+- Blog posts, articles, or writing portfolio.
+- Freelance clients and freelance project history.
+- Profile photographs, social banners, and favicon paths.
+- Exact current learning priorities.
+- Personal hobbies and lifestyle details.
+- Testimonials, client reviews, or user metrics.
+- Project launch dates and live-user counts.
+
+================================================================================
+## RECOMMENDED PORTFOLIO DIRECTION
+================================================================================
+
+Primary identity:
+  Software Engineer building full-stack applications, AI-powered
+  products, and reliable backend systems.
+
+Core message:
+  Build useful products. Engineer reliable systems. Explore intelligent
+  software.
+
+Featured project order for a general software engineering portfolio:
+  1. AstraDB — demonstrates low-level engineering and database internals.
+  2. LoopCode — demonstrates agentic workflows and software automation.
+  3. Podcast Buddy — demonstrates applied AI and end-to-end product work.
+  4. RailGaadi — demonstrates full-stack development and API integration.
+  5. Flare — demonstrates code intelligence and AI developer tooling.
+  6. PDFly — demonstrates practical browser-based application engineering.
+
+For an AI-focused portfolio, prioritize LoopCode, Flare, Podcast Buddy, and AstraDB.
+
+For a frontend-focused portfolio, prioritize RailGaadi, ChatWrapped, and Tale.
+
+For a backend or systems-focused portfolio, prioritize AstraDB, LoopCode, and Flare.
+
+Final principle:
+  Keep one consistent personal identity, but tailor the featured projects,
+  technical skills, and introduction to the engineering role being targeted.
+  Use only verified achievements, technologies, and project details.
+
+
+Added these details to your developer profile reference for future use:
+- Pronouns: He/His
+- Personal quote: “In life, if you don’t risk anything, you risk everything.”
+- Availability: Open for internships, full-time employment (FTE), and freelancing.
+- X: https://x.com/sumxnnn
+- LeetCode: https://leetcode.com/u/suman_dey
