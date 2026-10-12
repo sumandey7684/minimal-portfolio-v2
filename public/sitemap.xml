@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://www.sumandey.tech/</loc>
+  </url>
+  <url>
+    <loc>https://www.sumandey.tech/projects</loc>
+  </url>
+  <url>
+    <loc>https://www.sumandey.tech/experience</loc>
+  </url>
+  <url>
+    <loc>https://www.sumandey.tech/contact</loc>
+  </url>
+  <url>
+    <loc>https://www.sumandey.tech/writing</loc>
+  </url>
+  <url>
+    <loc>https://www.sumandey.tech/experiments</loc>
+  </url>
+  <url>
+    <loc>https://www.sumandey.tech/experiments/memory-box</loc>
+  </url>
+  <url>
+    <loc>https://www.sumandey.tech/experiments/vending-machine</loc>
+  </url>
+</urlset>
