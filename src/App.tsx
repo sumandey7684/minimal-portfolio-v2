@@ -182,8 +182,35 @@ function NotFoundPage() {
   );
 }
 
+function LazyRouteFallback({
+  onLoadingChange,
+}: {
+  onLoadingChange: (loading: boolean) => void;
+}) {
+  useEffect(() => {
+    onLoadingChange(true);
+
+    return () => onLoadingChange(false);
+  }, [onLoadingChange]);
+
+  return (
+    <div
+      className="flex min-h-[12rem] items-center justify-center gap-3 text-sm text-[var(--muted)]"
+      role="status"
+      aria-live="polite"
+    >
+      <span
+        className="size-4 animate-spin rounded-full border-2 border-current border-t-transparent motion-reduce:animate-none"
+        aria-hidden="true"
+      />
+      <span>Loading page...</span>
+    </div>
+  );
+}
+
 function AppContent() {
   const [paletteOpen, setPaletteOpen] = useState(false);
+  const [routeLoading, setRouteLoading] = useState(false);
   const { pathname } = useLocation();
 
   // Only individual experiment pages use the standalone layout.
@@ -235,8 +262,13 @@ function AppContent() {
 
       {!is404 && !isStandaloneExperiment && <SideIndex />}
 
-      <main className={is404 ? "relative" : "relative z-10"}>
-        <Suspense fallback={null}>
+      <main
+        className={is404 ? "relative" : "relative z-10"}
+        aria-busy={routeLoading}
+      >
+        <Suspense
+          fallback={<LazyRouteFallback onLoadingChange={setRouteLoading} />}
+        >
         <Routes>
           <Route
             path="/"
