@@ -26,14 +26,14 @@ const sections: PolicySection[] = [
   {
     title: "Cookies and unresolved provider details",
     paragraphs: [
-      "No application-specific cookies were found in the source reviewed for this implementation. The Google Fonts stylesheet is loaded as part of the page's visual styling before the consent choice is made. Whether that request requires a separate consent treatment should be confirmed for the site's target jurisdictions.",
-      "The cookie behavior, retention periods, and consent requirements of Vercel Analytics, CountAPI, Google Fonts, and other external services are controlled by those providers and require confirmation from their current documentation.",
+      "No application-specific cookies were found in the source reviewed for this implementation. The website self-hosts its font assets and does not request Google Fonts resources.",
+      "The cookie behavior, retention periods, and consent requirements of Vercel Analytics, CountAPI, and other external services are controlled by those providers and require confirmation from their current documentation.",
     ],
   },
   {
     title: "Third-party services and links",
     paragraphs: [
-      "The visitor count uses CountAPI. GitHub contribution activity is requested from the GitHub Contributions API. The site also loads fonts from Google Fonts. These services may receive technical request information when your browser contacts them.",
+      "The visitor count uses CountAPI. GitHub contribution activity is requested from the GitHub Contributions API. The website self-hosts its font assets rather than loading them from Google Fonts. These services may receive technical request information when your browser contacts them.",
       "The portfolio links to external sites including GitHub, LinkedIn, X, and LeetCode. Those sites operate independently and have their own privacy practices. Review their policies before sharing information with them.",
     ],
   },
