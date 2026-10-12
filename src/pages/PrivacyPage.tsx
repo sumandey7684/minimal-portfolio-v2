@@ -19,8 +19,15 @@ const sections: PolicySection[] = [
   {
     title: "Analytics and browser storage",
     paragraphs: [
-      "This site uses Vercel Analytics, which is included in the application to measure site usage. The portfolio does not currently display a cookie-consent banner, and this page does not claim that the service is cookie-free or describe provider retention beyond what is documented here.",
-      "The site uses sessionStorage for the visitor counter and the preloader state, and localStorage for the selected theme and football-game mute preference. These values are stored in your browser and can be removed through your browser settings. No application-specific cookies were found in the source reviewed for this page.",
+      "Optional measurement is controlled by the consent banner. Vercel Analytics and the visitor-count request are not mounted or sent until you accept optional analytics. Rejecting non-essential choices keeps both disabled.",
+      "The site uses localStorage to remember your consent choice, selected theme, and football-game mute preference. It uses sessionStorage for the visitor counter and preloader state. These are browser storage mechanisms, not application-specific cookies found in the source reviewed for this page.",
+    ],
+  },
+  {
+    title: "Cookies and unresolved provider details",
+    paragraphs: [
+      "No application-specific cookies were found in the source reviewed for this implementation. The Google Fonts stylesheet is loaded as part of the page's visual styling before the consent choice is made. Whether that request requires a separate consent treatment should be confirmed for the site's target jurisdictions.",
+      "The cookie behavior, retention periods, and consent requirements of Vercel Analytics, CountAPI, Google Fonts, and other external services are controlled by those providers and require confirmation from their current documentation.",
     ],
   },
   {

@@ -8,6 +8,8 @@ import {
 
 import { ThemeProvider } from "@/components/theme-provider";
 import { VisitorProvider } from "@/context/VisitorContext";
+import { ConsentProvider } from "@/context/ConsentContext";
+import { useConsent } from "@/context/ConsentContext";
 
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
@@ -28,6 +30,7 @@ import { GithubActivity } from "@/sections/GithubActivity";
 import { WritingPage } from "@/pages/WritingPage";
 import { ContactPage } from "./pages/ContactPage";
 import { PrivacyPage } from "@/pages/PrivacyPage";
+import { TermsPage } from "@/pages/TermsPage";
 
 const ExperimentsPage = lazy(() =>
   import("@/pages/ExperimentsPage").then((m) => ({ default: m.ExperimentsPage })),
@@ -40,10 +43,16 @@ const NotFoundSign = lazy(() =>
   import("@/components/NotFoundSign").then((m) => ({ default: m.NotFoundSign })),
 );
 
-import { Analytics } from "@vercel/analytics/react";
 import CursorGuide from "./components/CursorGuide";
 import Preloader from "./components/Preloader";
 import BottomBlur from "./components/BottomBlur";
+import { ConsentBanner } from "./components/ConsentBanner";
+
+const VercelAnalytics = lazy(() =>
+  import("@vercel/analytics/react").then(({ Analytics }) => ({
+    default: Analytics,
+  })),
+);
 
 const PAGE_META: { test: (path: string) => boolean; title: string; description: string }[] = [
   {
@@ -75,6 +84,12 @@ const PAGE_META: { test: (path: string) => boolean; title: string; description: 
     title: "Privacy Policy — Suman Dey",
     description:
       "Privacy information for Suman Dey's portfolio, including contact forms, analytics, browser storage, and third-party services.",
+  },
+  {
+    test: (path) => path === "/terms",
+    title: "Terms of Service — Suman Dey",
+    description:
+      "Terms for using Suman Dey's portfolio, including website use, intellectual property, external services, and disclaimers.",
   },
   {
     test: (path) => path === "/writing",
@@ -125,6 +140,7 @@ const VALID_ROUTES = [
   "/experience",
   "/contact",
   "/privacy",
+  "/terms",
   "/writing",
   "/experiments",
   "/experiments/memory-box",
@@ -306,6 +322,8 @@ function AppContent() {
 
           <Route path="/privacy" element={<PrivacyPage />} />
 
+          <Route path="/terms" element={<TermsPage />} />
+
           <Route path="/writing" element={<WritingPage />} />
 
           <Route
@@ -359,26 +377,39 @@ export function App() {
   return (
     <ThemeProvider>
       <LenisProvider>
-        <VisitorProvider>
-          <BrowserRouter>
+        <ConsentProvider>
+          <VisitorProvider>
+            <BrowserRouter>
             {loading && (
               <Preloader onDone={() => setLoading(false)} />
             )}
 
             <CursorGuide />
 
-            <Analytics />
+            <ConsentAwareAnalytics />
 
             <ScrollToTop />
 
             <AppContent />
 
             <RouteEffects />
-          </BrowserRouter>
-        </VisitorProvider>
+            <ConsentBanner />
+            </BrowserRouter>
+          </VisitorProvider>
+        </ConsentProvider>
       </LenisProvider>
     </ThemeProvider>
   );
+}
+
+function ConsentAwareAnalytics() {
+  const { analyticsAllowed } = useConsent();
+
+  return analyticsAllowed ? (
+    <Suspense fallback={null}>
+      <VercelAnalytics />
+    </Suspense>
+  ) : null;
 }
 
 export default App;

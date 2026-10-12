@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Shell, GapBand, SectionHeader } from "@/components/Layout";
 import { site } from "@/config/site";
+import { useConsent } from "@/context/ConsentContext";
 import { ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -33,6 +34,7 @@ const QUOTES = [
 ];
 
 export function Footer() {
+  const { openPreferences } = useConsent();
   const [localTime, setLocalTime] = useState<string>("");
   const [quoteIndex, setQuoteIndex] = useState(0);
 
@@ -124,6 +126,22 @@ export function Footer() {
           >
             Privacy Policy
           </Link>
+          <span className="mx-2 font-mono text-[11px] text-[var(--line)]" aria-hidden="true">
+            /
+          </span>
+          <Link
+            to="/terms"
+            className="inline-block font-mono text-[11px] text-[var(--soft)] underline decoration-[var(--line)] underline-offset-4 transition-colors hover:text-[var(--fg)]"
+          >
+            Terms of Service
+          </Link>
+          <button
+            type="button"
+            onClick={openPreferences}
+            className="mt-3 block mx-auto font-mono text-[11px] text-[var(--soft)] underline decoration-[var(--line)] underline-offset-4 transition-colors hover:text-[var(--fg)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--fg)]"
+          >
+            Privacy settings
+          </button>
           <p className="mt-2.5 flex items-center justify-center gap-2 font-mono text-[12px] text-[var(--soft)]">
             <span className="relative flex size-2">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60" />

@@ -1,5 +1,6 @@
 
 import React, { createContext, useContext, useState, useEffect } from "react";
+import { useConsent } from "@/context/ConsentContext";
 
 interface VisitorContextType {
   count: number | null;
@@ -15,8 +16,15 @@ export function VisitorProvider({
 }) {
   const [count, setCount] = useState<number | null>(null);
   const [isLoading, setIsLoading] = useState(true);
+  const { analyticsAllowed, status } = useConsent();
 
   useEffect(() => {
+    if (!analyticsAllowed) {
+      setIsLoading(false);
+      setCount(null);
+      return;
+    }
+
     const fetchCount = async () => {
       // Your own visitor counter key
       const KEY = "suman_portfolio_views";
@@ -61,7 +69,7 @@ export function VisitorProvider({
     };
 
     fetchCount();
-  }, []);
+  }, [analyticsAllowed, status]);
 
   return (
     <VisitorContext.Provider value={{ count, isLoading }}>
@@ -81,4 +89,3 @@ export function useVisitor() {
 
   return context;
 }
-
