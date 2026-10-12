@@ -27,6 +27,7 @@ import { GithubActivity } from "@/sections/GithubActivity";
 
 import { WritingPage } from "@/pages/WritingPage";
 import { ContactPage } from "./pages/ContactPage";
+import { PrivacyPage } from "@/pages/PrivacyPage";
 
 const ExperimentsPage = lazy(() =>
   import("@/pages/ExperimentsPage").then((m) => ({ default: m.ExperimentsPage })),
@@ -68,6 +69,12 @@ const PAGE_META: { test: (path: string) => boolean; title: string; description: 
     title: "Contact — Suman Dey",
     description:
       "Contact Suman Dey by email at sumandey7684@gmail.com or phone +91-7684093868.",
+  },
+  {
+    test: (path) => path === "/privacy",
+    title: "Privacy Policy — Suman Dey",
+    description:
+      "Privacy information for Suman Dey's portfolio, including contact forms, analytics, browser storage, and third-party services.",
   },
   {
     test: (path) => path === "/writing",
@@ -117,6 +124,7 @@ const VALID_ROUTES = [
   "/projects",
   "/experience",
   "/contact",
+  "/privacy",
   "/writing",
   "/experiments",
   "/experiments/memory-box",
@@ -295,6 +303,8 @@ function AppContent() {
           />
 
           <Route path="/contact" element={<ContactPage />} />
+
+          <Route path="/privacy" element={<PrivacyPage />} />
 
           <Route path="/writing" element={<WritingPage />} />
 

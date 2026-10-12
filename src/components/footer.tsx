@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { Shell, GapBand, SectionHeader } from "@/components/Layout";
 import { site } from "@/config/site";
 import { ArrowRight } from "lucide-react";
@@ -117,6 +118,12 @@ export function Footer() {
           <p className="mt-1.5 font-mono text-[12px] text-[var(--soft)]">
             © {new Date().getFullYear()} All rights reserved.
           </p>
+          <Link
+            to="/privacy"
+            className="mt-3 inline-block font-mono text-[11px] text-[var(--soft)] underline decoration-[var(--line)] underline-offset-4 transition-colors hover:text-[var(--fg)]"
+          >
+            Privacy Policy
+          </Link>
           <p className="mt-2.5 flex items-center justify-center gap-2 font-mono text-[12px] text-[var(--soft)]">
             <span className="relative flex size-2">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60" />
