@@ -318,11 +318,15 @@ export function ContactPage() {
                     {/* NAME */}
 
                     <div>
-                      <label className="mb-1.5 block font-mono text-[10px] uppercase tracking-wider text-[var(--soft)]">
+                      <label
+                        htmlFor="contact-name"
+                        className="mb-1.5 block font-mono text-[10px] uppercase tracking-wider text-[var(--soft)]"
+                      >
                         Your Name
                       </label>
 
                       <input
+                        id="contact-name"
                         type="text"
                         required
                         value={formState.name}
@@ -340,11 +344,15 @@ export function ContactPage() {
                     {/* EMAIL */}
 
                     <div>
-                      <label className="mb-1.5 block font-mono text-[10px] uppercase tracking-wider text-[var(--soft)]">
+                      <label
+                        htmlFor="contact-email"
+                        className="mb-1.5 block font-mono text-[10px] uppercase tracking-wider text-[var(--soft)]"
+                      >
                         Email Address
                       </label>
 
                       <input
+                        id="contact-email"
                         type="email"
                         required
                         value={formState.email}
@@ -362,11 +370,15 @@ export function ContactPage() {
                     {/* MESSAGE */}
 
                     <div>
-                      <label className="mb-1.5 block font-mono text-[10px] uppercase tracking-wider text-[var(--soft)]">
+                      <label
+                        htmlFor="contact-message"
+                        className="mb-1.5 block font-mono text-[10px] uppercase tracking-wider text-[var(--soft)]"
+                      >
                         Message
                       </label>
 
                       <textarea
+                        id="contact-message"
                         required
                         rows={6}
                         value={formState.message}
