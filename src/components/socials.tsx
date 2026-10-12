@@ -131,13 +131,13 @@ export function Socials({ className = "" }: { className?: string }) {
                   href.startsWith("mailto") ? undefined : "_blank"
                 }
                 rel="noopener noreferrer"
-                className="group flex cursor-pointer items-center gap-2 rounded-full border border-neutral-800 bg-neutral-900/60 px-4 py-2 font-mono text-xs text-neutral-300 shadow-sm transition-all duration-300 hover:border-neutral-600 hover:bg-neutral-800/80 hover:text-white active:scale-95"
+                className="group flex cursor-pointer items-center gap-2 rounded-full border border-neutral-800 bg-black px-4 py-2 font-mono text-xs text-white shadow-sm transition-all duration-300 hover:border-neutral-600 hover:bg-black hover:text-white active:scale-95"
               >
-                <Icon className="h-4 w-4 shrink-0 text-neutral-400 transition-transform group-hover:scale-110 group-hover:text-white" />
+                <Icon className="h-4 w-4 shrink-0 text-white transition-transform group-hover:scale-110 group-hover:text-white" />
 
                 <span>{label}</span>
 
-                <span className="text-[10px] text-neutral-500 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-white">
+                <span className="text-[10px] text-white transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-white">
                   ↗
                 </span>
               </a>
