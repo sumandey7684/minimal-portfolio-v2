@@ -19,7 +19,7 @@ const sections: PolicySection[] = [
   {
     title: "Analytics and browser storage",
     paragraphs: [
-      "Optional measurement is controlled by the consent banner. Vercel Analytics and the visitor-count request are not mounted or sent until you accept optional analytics. Rejecting non-essential choices keeps both disabled.",
+      "Optional measurement is controlled by the consent banner. Vercel Analytics, the visitor-count request, and the live GitHub contribution request are not mounted or sent until you accept optional analytics. Rejecting non-essential choices keeps them disabled; the GitHub activity section shows a local fallback until then.",
       "The site uses localStorage to remember your consent choice, selected theme, and football-game mute preference. It uses sessionStorage for the visitor counter and preloader state. These are browser storage mechanisms, not application-specific cookies found in the source reviewed for this page.",
     ],
   },

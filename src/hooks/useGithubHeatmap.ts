@@ -23,11 +23,13 @@ function buildFallbackHeatmap(seedText: string): HeatmapData {
 }
 
 /** Live GitHub contributions for the last year (public API, no auth). */
-export function useGithubHeatmap(user: string): HeatmapData {
+export function useGithubHeatmap(user: string, enabled: boolean): HeatmapData {
   const fallback = useMemo(() => buildFallbackHeatmap(user), [user]);
   const [heatmap, setHeatmap] = useState<HeatmapData>(fallback);
 
   useEffect(() => {
+    if (!enabled) return;
+
     let cancelled = false;
     fetch(`https://github-contributions-api.jogruber.de/v4/${user}?y=last`)
       .then((r) => (r.ok ? r.json() : Promise.reject(new Error("bad status"))))
@@ -47,7 +49,7 @@ export function useGithubHeatmap(user: string): HeatmapData {
     return () => {
       cancelled = true;
     };
-  }, [user]);
+  }, [enabled, user]);
 
   return heatmap;
 }

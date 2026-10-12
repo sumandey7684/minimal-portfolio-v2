@@ -2,6 +2,7 @@ import { useMemo } from "react";
 import { Shell, SectionHeader } from "@/components/Layout";
 import { useGithubHeatmap } from "@/hooks/useGithubHeatmap";
 import { site } from "@/config/site";
+import { useConsent } from "@/context/ConsentContext";
 import { ExternalLink } from "lucide-react";
 
 const HEAT_OPACITY = [0.07, 0.25, 0.45, 0.7, 1];
@@ -9,7 +10,8 @@ const MONTH_NAMES = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Se
 
 export function GithubActivity() {
   const username = site.github.username;
-  const heatmap = useGithubHeatmap(username);
+  const { analyticsAllowed } = useConsent();
+  const heatmap = useGithubHeatmap(username, analyticsAllowed);
 
   const monthLabels = useMemo(() => {
     const now = new Date();
