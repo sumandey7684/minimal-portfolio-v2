@@ -462,7 +462,7 @@ export default function MemoryBoard(): JSX.Element {
           <div class="mb-tool" data-act="rename" title="rename">✎</div>
           <div class="mb-tool" data-act="delete" title="remove">✕</div>
         </div>
-        <img src="${opts.imgSrc}" draggable="false" />
+        <img src="${opts.imgSrc}" alt="${escapeHtml(opts.caption || "Memory photo")}" draggable="false" />
         <div class="mb-cap" contenteditable="false" spellcheck="false">${escapeHtml(opts.caption || "untitled")}</div>
         <input type="file" accept="audio/*" class="mb-audio-input" style="display:none" />
       `;
@@ -663,6 +663,7 @@ export default function MemoryBoard(): JSX.Element {
       activeNode = node;
 
       frameImg.src = node.imgSrc;
+      frameImg.alt = node.caption;
       frameImg.classList.add("show");
       framePlaceholder.style.display = "none";
       frameCaptionText.textContent = node.caption;
@@ -696,6 +697,7 @@ export default function MemoryBoard(): JSX.Element {
       player.src = "";
       frameImg.classList.remove("show");
       frameImg.src = "";
+      frameImg.alt = "";
       frameCaption.classList.remove("show");
       framePlaceholder.style.display = "";
       frameEl.classList.remove("playing");

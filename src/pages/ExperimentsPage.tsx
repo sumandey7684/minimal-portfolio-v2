@@ -9,6 +9,7 @@ const experiments = [
     description: "Memories, photos and sounds on a string",
     category: "interactive",
     image: "/assets/experiments/memory-box.webp",
+    alt: "Memory Box board with photos connected by strings",
     href: "/experiments/memory-box",
   },
   {
@@ -16,6 +17,7 @@ const experiments = [
     description: "A vending machine that dispenses items",
     category: "interactive",
     image: "/assets/experiments/vending-machine.webp",
+    alt: "Line-art vending machine with product slots and a coin",
     href: "/experiments/vending-machine",
   },
   {
@@ -23,6 +25,7 @@ const experiments = [
     description: "A page that is not found",
     category: "physics",
     image: "/assets/experiments/404.webp",
+    alt: "Glowing 404 sign in a dark frame",
     href: "/experiments/404",
   }
 ];
@@ -54,7 +57,7 @@ export function ExperimentsPage() {
               <div className="size-[52px] shrink-0 overflow-hidden rounded-lg border border-[var(--line)] bg-[var(--chip)] sm:size-[56px]">
                 <img
                   src={experiment.image}
-                  alt=""
+                  alt={experiment.alt}
                   loading="lazy"
                   className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
                 />

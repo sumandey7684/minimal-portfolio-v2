@@ -139,6 +139,9 @@ const FolderComponent = ({
     >
       <div
         className="relative cursor-pointer select-none"
+        role="button"
+        tabIndex={0}
+        aria-label="Open memory board"
         style={{
           width: BASE_WIDTH * scale,
           height: BASE_HEIGHT * scale,
@@ -150,6 +153,12 @@ const FolderComponent = ({
           setIsHovered(false);
         }}
         onClick={() => setIsOpen(true)}
+        onKeyDown={(event) => {
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            setIsOpen(true);
+          }
+        }}
       >
         <div
           className="absolute top-1/2 left-1/2"
