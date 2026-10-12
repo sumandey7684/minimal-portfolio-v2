@@ -6,8 +6,6 @@ import React, { useEffect, useRef } from "react";
   No :root, html, body or global * rules.
 */
 const CSS = `
-  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap');
-
   .mb-root{
     --mb-bg-1:#f3f4f6;
     --mb-bg-2:#eceef1;
