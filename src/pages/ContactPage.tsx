@@ -281,11 +281,19 @@ export function ContactPage() {
                   <form
                     noValidate
                     onSubmit={handleSubmit}
+                    aria-busy={submitting}
                     className="space-y-5"
                   >
+                    {submitting && (
+                      <div role="status" aria-live="polite" className="sr-only">
+                        Preparing your message...
+                      </div>
+                    )}
+
                     {formStatus === "success" && (
                       <div
                         role="status"
+                        aria-live="polite"
                         className="border border-blue-500/30 bg-blue-500/10 p-4 text-blue-300"
                       >
                         <div className="flex items-start gap-2">
@@ -301,6 +309,7 @@ export function ContactPage() {
                     {formStatus === "error" && (
                       <p
                         role="alert"
+                        aria-live="assertive"
                         className="border border-red-500/30 bg-red-500/10 p-4 text-[12px] leading-5 text-red-300"
                       >
                         {formError}
