@@ -47,6 +47,7 @@ import CursorGuide from "./components/CursorGuide";
 import Preloader from "./components/Preloader";
 import BottomBlur from "./components/BottomBlur";
 import { ConsentBanner } from "./components/ConsentBanner";
+import MobileContactCTA from "./components/MobileContactCTA";
 
 const VercelAnalytics = lazy(() =>
   import("@vercel/analytics/react").then(({ Analytics }) => ({
@@ -243,6 +244,13 @@ function AppContent() {
     pathname.startsWith("/experiments/");
 
   const is404 = !VALID_ROUTES.includes(pathname);
+  const { status, preferencesOpen } = useConsent();
+  const showMobileCTA =
+    !is404 &&
+    !isStandaloneExperiment &&
+    pathname !== "/contact" &&
+    Boolean(status) &&
+    !preferencesOpen;
 
   usePageMeta(pathname, is404);
 
@@ -277,7 +285,9 @@ function AppContent() {
       className={
         isStandaloneExperiment
           ? "relative min-h-screen overflow-x-hidden bg-[var(--bg)] text-[var(--fg)]"
-          : "relative min-h-screen overflow-x-hidden bg-[var(--bg)] font-sans text-[var(--fg)] antialiased transition-colors duration-300"
+          : `relative min-h-screen overflow-x-hidden bg-[var(--bg)] font-sans text-[var(--fg)] antialiased transition-colors duration-300 ${
+              showMobileCTA ? "pb-28 md:pb-0" : ""
+            }`
       }
     >
       {!is404 && !isStandaloneExperiment && (
@@ -394,6 +404,7 @@ export function App() {
 
             <RouteEffects />
             <ConsentBanner />
+            <MobileContactCTA />
             </BrowserRouter>
           </VisitorProvider>
         </ConsentProvider>

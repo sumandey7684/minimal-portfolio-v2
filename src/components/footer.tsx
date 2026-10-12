@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Shell, GapBand, SectionHeader } from "@/components/Layout";
 import { site } from "@/config/site";
 import { useConsent } from "@/context/ConsentContext";
@@ -34,9 +34,15 @@ const QUOTES = [
 ];
 
 export function Footer() {
-  const { openPreferences } = useConsent();
+  const { openPreferences, status, preferencesOpen } = useConsent();
+  const { pathname } = useLocation();
   const [localTime, setLocalTime] = useState<string>("");
   const [quoteIndex, setQuoteIndex] = useState(0);
+  const showMobileCTA =
+    pathname !== "/contact" &&
+    !pathname.startsWith("/experiments/") &&
+    Boolean(status) &&
+    !preferencesOpen;
 
   useEffect(() => {
     const updateTime = () => {
@@ -64,7 +70,7 @@ export function Footer() {
   }, []);
 
   return (
-    <footer className="w-full">
+    <footer className={`w-full ${showMobileCTA ? "pb-28 md:pb-0" : ""}`}>
       <GapBand h="h-12" />
       {/* Scrolled Too Far Section */}
       <SectionHeader title="Scrolled Too Far" />
