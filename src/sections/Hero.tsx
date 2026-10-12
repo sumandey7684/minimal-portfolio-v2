@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "react-router-dom";
 import { Shell } from "@/components/Layout";
 import { site } from "@/config/site";
-import { MapPin, Search, RotateCw, Eye } from "lucide-react";
+import { MapPin, Search, RotateCw, Eye, ArrowUpRight } from "lucide-react";
 import { useVisitor } from "@/context/VisitorContext";
 import { HireMeWeb } from "@/components/HireMeWeb";
 import { FootballBanner } from "@/components/football/FootballBanner";
@@ -158,17 +159,27 @@ data-cursor-label="click to view memories"
             </div>
           </div>
 
-          {/* Quick Command Palette Keyboard Badge */}
-          {onOpenPalette && (
-            <button
-              onClick={onOpenPalette}
-              className="flex items-center gap-2 rounded-lg border border-[var(--line)] bg-[var(--chip)] px-3 py-1.5 font-mono text-[11px] text-[var(--muted)] hover:text-[var(--fg)] hover:border-[var(--soft)] transition-colors shadow-sm cursor-pointer"
-              data-cursor-label="open command palette"
+          <div className="flex flex-wrap items-center justify-center gap-2 sm:justify-start">
+            {/* Quick Command Palette Keyboard Badge */}
+            {onOpenPalette && (
+              <button
+                onClick={onOpenPalette}
+                className="flex items-center gap-2 rounded-lg border border-[var(--line)] bg-[var(--chip)] px-3 py-1.5 font-mono text-[11px] text-[var(--muted)] hover:border-[var(--soft)] hover:text-[var(--fg)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--fg)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg)] transition-colors shadow-sm cursor-pointer"
+                data-cursor-label="open command palette"
+              >
+                <Search size={14} />
+                <span>⌘K</span>
+              </button>
+            )}
+
+            <Link
+              to="/contact"
+              className="inline-flex items-center gap-1.5 rounded-lg bg-[var(--fg)] px-3 py-1.5 font-mono text-[11px] font-semibold text-[var(--bg)] shadow-sm transition-all hover:-translate-y-0.5 hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--fg)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg)]"
             >
-              <Search size={14} />
-              <span>⌘K</span>
-            </button>
-          )}
+              Contact me
+              <ArrowUpRight size={13} aria-hidden="true" />
+            </Link>
+          </div>
         </motion.div>
       </Shell>
     </div>
