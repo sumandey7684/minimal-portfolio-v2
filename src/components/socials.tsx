@@ -175,7 +175,11 @@ export function Socials({ className = "" }: { className?: string }) {
                           site.socialBannerImage ||
                           "/banner.png"
                         }
-                        alt={`${label} profile`}
+                        alt={
+                          card.image
+                            ? `${label} profile preview`
+                            : "Suman Dey profile banner"
+                        }
                         className={`absolute inset-0 h-full w-full object-cover ${card.image ? "object-top" : "object-center"}`}
                       />
 
@@ -257,4 +261,3 @@ export function Socials({ className = "" }: { className?: string }) {
     </div>
   );
 }
-
