@@ -572,16 +572,22 @@ const memories = [
     image: "/assets/photos/home/photo4.webp",
     title: "summer",
     date: "JUN 24",
+    width: 300,
+    height: 450,
   },
   {
     image: "/assets/photos/home/photo2.webp",
     title: "good days",
     date: "AUG 24",
+    width: 300,
+    height: 400,
   },
   {
     image: "/assets/photos/home/photo5.webp",
     title: "memories",
     date: "DEC 24",
+    width: 300,
+    height: 400,
   },
 ];
 
@@ -631,8 +637,8 @@ const memories = [
   <img
     src={memory.image}
     alt={memory.title}
-    width={300}
-    height={150}
+    width={memory.width}
+    height={memory.height}
     draggable={false}
     className="
       h-full

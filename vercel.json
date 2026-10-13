@@ -2,18 +2,20 @@
   "framework": "vite",
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
+  "cleanUrls": true,
+  "trailingSlash": false,
   "redirects": [
     {
       "source": "/",
       "has": [{ "type": "host", "value": "sumandey.tech" }],
       "destination": "https://www.sumandey.tech/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/:path*",
       "has": [{ "type": "host", "value": "sumandey.tech" }],
       "destination": "https://www.sumandey.tech/:path*",
-      "permanent": true
+      "statusCode": 301
     }
   ]
 }

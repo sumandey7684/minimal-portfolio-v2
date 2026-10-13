@@ -117,6 +117,7 @@ const VALID_ROUTES = [
   "/experiments",
   "/experiments/memory-box",
   "/experiments/vending-machine",
+  "/experiments/404",
 ];
 
 function ScrollToTop() {
@@ -199,10 +200,10 @@ function CrawlHeading({
   );
 }
 
-function NotFoundPage() {
+function NotFoundPage({ title = "Page not found" }: { title?: string }) {
   return (
     <div className="relative min-h-screen overflow-hidden bg-[var(--bg)] text-[var(--fg)]">
-      <CrawlHeading title="Page not found" />
+      <CrawlHeading title={title} />
       <NotFoundSign />
     </div>
   );
@@ -377,7 +378,7 @@ function AppContent() {
           />
           <Route
             path="/experiments/404"
-            element={<NotFoundPage />}
+            element={<NotFoundPage title="404 Experiment" />}
           />
 
           <Route path="*" element={<NotFoundPage />} />

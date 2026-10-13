@@ -219,6 +219,24 @@ export const seoPages: SeoPage[] = [
       },
     ],
   },
+  {
+    path: "/experiments/404",
+    title: "404 Experiment — Suman Dey",
+    description: "An interactive 404 page experiment on Suman Dey's portfolio.",
+    h1: "404 Experiment",
+    robots: "noindex, follow",
+    inSitemap: false,
+    crumbs: [
+      { name: "Home", path: "/" },
+      { name: "Experiments", path: "/experiments" },
+      { name: "404 Experiment", path: "/experiments/404" },
+    ],
+    blocks: [
+      {
+        paragraphs: ["An interactive 404 page experiment."],
+      },
+    ],
+  },
 ];
 
 export const notFoundSeo: SeoPage = {
