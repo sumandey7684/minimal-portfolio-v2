@@ -64,6 +64,8 @@ export function ProjectCard({ project: p, index = 0 }: { project: Project; index
               <img
                 src={p.image}
                 alt={`${p.title} preview`}
+                width={288}
+                height={160}
                 className="w-full h-full object-cover object-top"
                 onError={() => setImgError(true)}
               />

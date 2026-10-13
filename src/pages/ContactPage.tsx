@@ -99,7 +99,7 @@ export function ContactPage() {
 
   return (
     <main id="contact" className="">
-      <SectionHeader title="Contact" />
+      <SectionHeader title="Contact" heading="h1" />
 
       <Shell>
         <div className="border border-[var(--line)]">

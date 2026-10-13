@@ -69,7 +69,7 @@ export const site = {
 
   lastName: "Dey",
 
-  url: "https://sumandey.in",
+  url: "https://www.sumandey.tech",
 
   quote: {
     text: "In life, if you don't risk anything, you risk everything.",

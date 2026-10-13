@@ -18,10 +18,12 @@ export function SectionHeader({
   title,
   aside,
   id,
+  heading = "h2",
 }: {
   title: string;
   aside?: React.ReactNode;
   id?: string;
+  heading?: "h1" | "h2";
 }) {
   return (
     <div id={id} className="relative w-full border-y border-[var(--line)] bg-stripes">
@@ -33,9 +35,15 @@ export function SectionHeader({
         <span className="absolute bottom-0 right-0 h-[3px] w-[3px] translate-x-1/2 translate-y-1/2 bg-[var(--fg)] opacity-40 z-20" />
 
         <div className="flex items-center justify-between gap-4 px-6 py-3 sm:px-8 w-full">
-          <h2 className="font-serif text-2xl tracking-wide text-[var(--fg)]">
-            {title}
-          </h2>
+          {heading === "h1" ? (
+            <h1 className="font-serif text-2xl tracking-wide text-[var(--fg)]">
+              {title}
+            </h1>
+          ) : (
+            <h2 className="font-serif text-2xl tracking-wide text-[var(--fg)]">
+              {title}
+            </h2>
+          )}
           {aside}
         </div>
       </Shell>

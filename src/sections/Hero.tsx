@@ -106,6 +106,8 @@ data-cursor-label="click to view memories"
               <img
                 src={site.profileImages[imgIndex]}
                 alt={site.name}
+                width={80}
+                height={80}
                 loading="eager"
                 decoding="async"
                 className="h-full w-full object-cover pointer-events-none"

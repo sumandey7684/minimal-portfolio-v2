@@ -631,6 +631,8 @@ const memories = [
   <img
     src={memory.image}
     alt={memory.title}
+    width={300}
+    height={150}
     draggable={false}
     className="
       h-full

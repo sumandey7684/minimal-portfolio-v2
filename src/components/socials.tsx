@@ -180,6 +180,8 @@ export function Socials({ className = "" }: { className?: string }) {
                             ? `${label} profile preview`
                             : "Suman Dey profile banner"
                         }
+                        width={288}
+                        height={112}
                         className={`absolute inset-0 h-full w-full object-cover ${card.image ? "object-top" : "object-center"}`}
                       />
 
@@ -197,6 +199,8 @@ export function Socials({ className = "" }: { className?: string }) {
                           <img
                             src={site.profileImages[0]}
                             alt={site.name}
+                            width={48}
+                            height={48}
                             className="h-full w-full object-cover"
                           />
                         </div>

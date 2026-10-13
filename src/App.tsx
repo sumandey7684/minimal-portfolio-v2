@@ -3,6 +3,7 @@ import {
   BrowserRouter,
   Routes,
   Route,
+  Link,
   useLocation,
 } from "react-router-dom";
 
@@ -43,6 +44,7 @@ const NotFoundSign = lazy(() =>
   import("@/components/NotFoundSign").then((m) => ({ default: m.NotFoundSign })),
 );
 
+import { canonicalUrl, getSeoForPath, notFoundSeo, personAndWebsiteJsonLd } from "./seo/pages";
 import CursorGuide from "./components/CursorGuide";
 import Preloader from "./components/Preloader";
 import BottomBlur from "./components/BottomBlur";
@@ -55,83 +57,52 @@ const VercelAnalytics = lazy(() =>
   })),
 );
 
-const PAGE_META: { test: (path: string) => boolean; title: string; description: string }[] = [
-  {
-    test: (path) => path === "/",
-    title: "Suman Dey — Software Engineer",
-    description:
-      "Personal portfolio of Suman Dey, a software engineer in Bhubaneswar building full-stack applications, AI-powered products, and backend systems.",
-  },
-  {
-    test: (path) => path === "/projects",
-    title: "Projects — Suman Dey",
-    description:
-      "Projects by Suman Dey, including AstraDB, LoopCode, Podcast Buddy, RailGaadi, Flare, and PDFly.",
-  },
-  {
-    test: (path) => path === "/experience",
-    title: "Experience — Suman Dey",
-    description:
-      "Suman Dey's AI/ML internship at MindBrain Innovation and B.Tech in Computer Science at Trident Academy of Technology.",
-  },
-  {
-    test: (path) => path === "/contact",
-    title: "Contact — Suman Dey",
-    description:
-      "Contact Suman Dey by email at sumandey7684@gmail.com or phone +91-7684093868.",
-  },
-  {
-    test: (path) => path === "/privacy",
-    title: "Privacy Policy — Suman Dey",
-    description:
-      "Privacy information for Suman Dey's portfolio, including contact forms, analytics, browser storage, and third-party services.",
-  },
-  {
-    test: (path) => path === "/terms",
-    title: "Terms of Service — Suman Dey",
-    description:
-      "Terms for using Suman Dey's portfolio, including website use, intellectual property, external services, and disclaimers.",
-  },
-  {
-    test: (path) => path === "/writing",
-    title: "Writing — Suman Dey",
-    description: "Writing by Suman Dey. No articles are published yet.",
-  },
-  {
-    test: (path) => path === "/experiments",
-    title: "Experiments — Suman Dey",
-    description: "Interactive experiments on Suman Dey's portfolio.",
-  },
-  {
-    test: (path) => path.startsWith("/experiments/memory-box"),
-    title: "Memory Box — Suman Dey",
-    description: "A memory board experiment on Suman Dey's portfolio.",
-  },
-  {
-    test: (path) => path.startsWith("/experiments/vending-machine"),
-    title: "Vending Machine — Suman Dey",
-    description: "A vending machine experiment on Suman Dey's portfolio.",
-  },
-];
+function setMeta(attribute: "name" | "property", key: string, content: string) {
+  let element = document.head.querySelector(`meta[${attribute}="${key}"]`);
+  if (!element) {
+    element = document.createElement("meta");
+    element.setAttribute(attribute, key);
+    document.head.appendChild(element);
+  }
+  element.setAttribute("content", content);
+}
 
 function usePageMeta(pathname: string, is404: boolean) {
   useEffect(() => {
-    const match = is404
-      ? {
-          title: "Page not found — Suman Dey",
-          description: "This page is not on Suman Dey's portfolio.",
-        }
-      : PAGE_META.find((page) => page.test(pathname)) ?? PAGE_META[0];
+    const page = is404 ? notFoundSeo : getSeoForPath(pathname);
+    document.title = page.title;
+    setMeta("name", "description", page.description);
+    setMeta("name", "robots", page.robots);
+    setMeta("property", "og:title", page.title);
+    setMeta("property", "og:description", page.description);
+    setMeta(
+      "property",
+      "og:url",
+      page.path === "/404" ? canonicalUrl("/") : canonicalUrl(page.path),
+    );
+    setMeta("name", "twitter:title", page.title);
+    setMeta("name", "twitter:description", page.description);
 
-    document.title = match.title;
-
-    let description = document.querySelector('meta[name="description"]');
-    if (!description) {
-      description = document.createElement("meta");
-      description.setAttribute("name", "description");
-      document.head.appendChild(description);
+    let canonical = document.head.querySelector<HTMLLinkElement>('link[rel="canonical"]');
+    if (page.path === "/404") {
+      canonical?.remove();
+    } else {
+      if (!canonical) {
+        canonical = document.createElement("link");
+        canonical.rel = "canonical";
+        document.head.appendChild(canonical);
+      }
+      canonical.href = canonicalUrl(page.path);
     }
-    description.setAttribute("content", match.description);
+
+    let jsonLd = document.getElementById("seo-jsonld");
+    if (!jsonLd) {
+      jsonLd = document.createElement("script");
+      jsonLd.id = "seo-jsonld";
+      jsonLd.setAttribute("type", "application/ld+json");
+      document.head.appendChild(jsonLd);
+    }
+    jsonLd.textContent = JSON.stringify(personAndWebsiteJsonLd(page)).split("<").join("\\u003c");
   }, [pathname, is404]);
 }
 
@@ -199,9 +170,39 @@ function MainLayout({
   );
 }
 
+function CrawlHeading({
+  title,
+  crumbs,
+}: {
+  title: string;
+  crumbs?: { href: string; label: string }[];
+}) {
+  return (
+    <div className="sr-only">
+      {crumbs && crumbs.length > 1 ? (
+        <nav aria-label="Breadcrumb">
+          <ol>
+            {crumbs.map((crumb, index) => (
+              <li key={crumb.href}>
+                {index === crumbs.length - 1 ? (
+                  crumb.label
+                ) : (
+                  <Link to={crumb.href}>{crumb.label}</Link>
+                )}
+              </li>
+            ))}
+          </ol>
+        </nav>
+      ) : null}
+      <h1>{title}</h1>
+    </div>
+  );
+}
+
 function NotFoundPage() {
   return (
     <div className="relative min-h-screen overflow-hidden bg-[var(--bg)] text-[var(--fg)]">
+      <CrawlHeading title="Page not found" />
       <NotFoundSign />
     </div>
   );
@@ -343,12 +344,36 @@ function AppContent() {
 
           <Route
             path="/experiments/memory-box"
-            element={<MemoryBoxPage />}
+            element={
+              <>
+                <CrawlHeading
+                  title="Memory Box"
+                  crumbs={[
+                    { href: "/", label: "Home" },
+                    { href: "/experiments", label: "Experiments" },
+                    { href: "/experiments/memory-box", label: "Memory Box" },
+                  ]}
+                />
+                <MemoryBoxPage />
+              </>
+            }
           />
 
           <Route
             path="/experiments/vending-machine"
-            element={<VendingMachine />}
+            element={
+              <>
+                <CrawlHeading
+                  title="Vending Machine"
+                  crumbs={[
+                    { href: "/", label: "Home" },
+                    { href: "/experiments", label: "Experiments" },
+                    { href: "/experiments/vending-machine", label: "Vending Machine" },
+                  ]}
+                />
+                <VendingMachine />
+              </>
+            }
           />
           <Route
             path="/experiments/404"

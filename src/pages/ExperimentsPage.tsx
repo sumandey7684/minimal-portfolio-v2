@@ -35,6 +35,7 @@ export function ExperimentsPage() {
     <div className="min-h-fit bg-[var(--bg)] text-[var(--fg)]">
       <SectionHeader
         title="Experiments"
+        heading="h1"
         aside={
           <span className="font-mono text-[10px] text-[var(--muted)]">
             SIDE PROJECTS / PLAYGROUND
@@ -58,6 +59,8 @@ export function ExperimentsPage() {
                 <img
                   src={experiment.image}
                   alt={experiment.alt}
+                  width={56}
+                  height={56}
                   loading="lazy"
                   className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
                 />

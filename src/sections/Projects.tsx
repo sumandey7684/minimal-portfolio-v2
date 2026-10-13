@@ -98,6 +98,7 @@ const displayedProjects = useMemo(() => {
       <div id="projects">
         <SectionHeader
           title="Projects"
+          heading={isSearchable ? "h1" : "h2"}
           aside={
             !isSearchable ? (
               <div className="flex gap-1 rounded-lg border border-[var(--line)] bg-[var(--chip)] p-0.5">

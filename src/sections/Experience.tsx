@@ -16,7 +16,7 @@ export function Experience({ isDetailed }: { isDetailed?: boolean }) {
 
   return (
     <div id="experience">
-      <SectionHeader title="Experience" />
+      <SectionHeader title="Experience" heading={isExperiencePage ? "h1" : "h2"} />
 
       <Shell>
         {site.experience.map((job, i) => (
