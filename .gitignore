@@ -10,4 +10,5 @@ next-env.d.ts
 
 .vercel
 .env*
+.env
 /dist
