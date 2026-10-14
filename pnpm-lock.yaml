@@ -44,6 +44,9 @@ importers:
       react-router-dom:
         specifier: ^6.29.0
         version: 6.30.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      sarvamai:
+        specifier: ^1.1.12
+        version: 1.1.12
     devDependencies:
       '@types/matter-js':
         specifier: ^0.20.2
@@ -984,6 +987,10 @@ packages:
   run-parallel@1.2.0:
     resolution: {integrity: sha512-5l4VyZR86LZ/lDxZTR6jqL8AFE2S0IFLMP26AbjsLVADxHdhB/c0GUsH+y39UfCi3dzz8OlQuPmnaJOMoDHQBA==}
 
+  sarvamai@1.1.12:
+    resolution: {integrity: sha512-+H3rX2qgViN15kgGaJua+IDOphqHVXyz+WnHXIUXmNb5CnDK0bemFw1z3FcBjFZz5ELWUNN/oiq3TLcWzdVDgA==}
+    engines: {node: '>=18.0.0'}
+
   scheduler@0.23.2:
     resolution: {integrity: sha512-UOShsPwz7NrMUqhR6t0hWjFduvOzbtv7toDH1/hIrfRNIDBnnBWd0CwJTGvTpngVlmwGCdP9/Zl/tVrDqcuYzQ==}
 
@@ -1085,6 +1092,18 @@ packages:
       tsx:
         optional: true
       yaml:
+        optional: true
+
+  ws@8.22.0:
+    resolution: {integrity: sha512-Ydggc987+RO0AnWtZ/7Wq9FtNvcrL1b/RO0ud9mWjUPgDrsAAwQSF51sm2hm1XofbU/4jkpGEsLFsZZxU+1DOg==}
+    engines: {node: '>=10.0.0'}
+    peerDependencies:
+      bufferutil: ^4.0.1
+      utf-8-validate: '>=5.0.2'
+    peerDependenciesMeta:
+      bufferutil:
+        optional: true
+      utf-8-validate:
         optional: true
 
   yallist@3.1.1:
@@ -1842,6 +1861,13 @@ snapshots:
     dependencies:
       queue-microtask: 1.2.3
 
+  sarvamai@1.1.12:
+    dependencies:
+      ws: 8.22.0
+    transitivePeerDependencies:
+      - bufferutil
+      - utf-8-validate
+
   scheduler@0.23.2:
     dependencies:
       loose-envify: 1.4.0
@@ -1935,5 +1961,7 @@ snapshots:
       '@types/node': 20.19.43
       fsevents: 2.3.3
       jiti: 1.21.7
+
+  ws@8.22.0: {}
 
   yallist@3.1.1: {}
