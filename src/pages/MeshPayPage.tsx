@@ -10,11 +10,11 @@ const shown = [
 ];
 
 const unverified = [
-  "Encryption and secure messaging. The screen does not name an algorithm.",
+  "How RSA-OAEP, AES-256-GCM, and SHA-256 are applied. The names are part of the stack. The screen does not show keys, nonces, or ciphertext.",
   "Replay protection. No nonce, timestamp window, or signature check is shown.",
   "Reconciliation after connectivity returns, beyond the bridge-upload control and the note that settlement waits for that upload.",
   "How the idempotency cache prevents a duplicate payment. The reset control names the cache. Its rules are not visible.",
-  "Languages, frameworks, protocols, and tests. None are named on the screen, and no public repository was found to inspect.",
+  "A public repository and test suite were not found to link. The stack names are recorded without a source tree to inspect.",
 ];
 
 const lifecycle = [
@@ -31,9 +31,7 @@ export function MeshPayPage() {
         title="MeshPay"
         heading="h1"
         aside={
-          <span className="font-mono text-[10px] text-[var(--muted)]">
-            Year not established
-          </span>
+          <span className="font-mono text-[10px] text-[var(--muted)]">2026</span>
         }
       />
 
@@ -194,24 +192,35 @@ export function MeshPayPage() {
         <div className="mt-5 grid gap-4 sm:grid-cols-2">
           <div className="rounded-lg border border-[var(--line)] p-4">
             <h3 className="font-mono text-[10px] uppercase tracking-[0.14em] text-[var(--soft)]">
-              Labeled on the screen
+              Application
             </h3>
             <div className="mt-3 flex flex-wrap gap-1.5">
-              <span className="rounded border border-[var(--line)]/30 bg-[var(--chip)] px-2 py-0.5 font-mono text-[10.5px] text-[var(--muted)]">
-                H2
-              </span>
-              <span className="rounded border border-[var(--line)]/30 bg-[var(--chip)] px-2 py-0.5 font-mono text-[10.5px] text-[var(--muted)]">
-                Local simulation
-              </span>
+              {["Java 17", "Spring Boot 3.3", "Spring Data JPA", "H2"].map((item) => (
+                <span
+                  key={item}
+                  className="rounded border border-[var(--line)]/30 bg-[var(--chip)] px-2 py-0.5 font-mono text-[10.5px] text-[var(--muted)]"
+                >
+                  {item}
+                </span>
+              ))}
             </div>
           </div>
           <div className="rounded-lg border border-[var(--line)] p-4">
             <h3 className="font-mono text-[10px] uppercase tracking-[0.14em] text-[var(--soft)]">
-              Not established
+              Packet protection
             </h3>
+            <div className="mt-3 flex flex-wrap gap-1.5">
+              {["RSA-OAEP", "AES-256-GCM", "SHA-256"].map((item) => (
+                <span
+                  key={item}
+                  className="rounded border border-[var(--line)]/30 bg-[var(--chip)] px-2 py-0.5 font-mono text-[10.5px] text-[var(--muted)]"
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
             <p className="mt-3 text-[13px] leading-6 text-[var(--muted)]">
-              No confirmed language, framework, messaging protocol, encryption
-              library, GitHub repository, demo URL, or project year.
+              No confirmed GitHub repository or demo URL.
             </p>
           </div>
         </div>

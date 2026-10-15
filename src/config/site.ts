@@ -261,7 +261,16 @@ projects: [
       "Simulated mesh-routed offline payments with deferred settlement.",
     story:
       "The interface is labeled Offline Payments and Mesh Simulation. It includes payment entry in INR, a mesh network topology, gossip and bridge controls, and a local H2 database.\n\nThe screen identifies the view as simulation mode.",
-    stack: ["H2"],
+    stack: [
+      "Java 17",
+      "Spring Boot 3.3",
+      "Spring Data JPA",
+      "H2",
+      "RSA-OAEP",
+      "AES-256-GCM",
+      "SHA-256",
+    ],
+    year: "2026",
     featured: true,
     href: "/projects/meshpay",
     image: "/projects/meshpay.png",

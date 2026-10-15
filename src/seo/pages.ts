@@ -183,7 +183,7 @@ export const seoPages: SeoPage[] = [
       {
         paragraphs: [
           "MeshPay is presented as a simulation of offline payments that move across nearby devices and settle later through a bridge. The screen labels the local database as H2.",
-          "No public GitHub repository, live demo URL, project year, or test suite was found. Encryption, replay protection, and reconciliation rules are not claimed beyond the labels on the screen.",
+          "The project year is 2026. The stack is Java 17, Spring Boot 3.3, Spring Data JPA, H2, RSA-OAEP, AES-256-GCM, and SHA-256. No public GitHub repository or live demo URL was found.",
         ],
       },
     ],
