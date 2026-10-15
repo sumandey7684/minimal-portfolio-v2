@@ -58,18 +58,15 @@ export function ProjectCard({ project: p, index = 0 }: { project: Project; index
             )}
           </div>
 
-          {/* Angled Screenshot Image */}
           {p.image && !imgError ? (
-            <div className="absolute -right-6 -bottom-3 w-56 h-32 sm:-right-12 sm:-bottom-5 sm:w-72 sm:h-40 rounded-lg border-4 border-[var(--bg)]/40 shadow-xl overflow-hidden group-hover:-right-4 group-hover:-bottom-1 sm:group-hover:-right-9 sm:group-hover:-bottom-2 transition-all duration-300 pointer-events-none">
-              <img
-                src={p.image}
-                alt={p.imageAlt ?? `${p.title} preview`}
-                width={288}
-                height={160}
-                className="w-full h-full object-cover object-top"
-                onError={() => setImgError(true)}
-              />
-            </div>
+            <img
+              src={p.image}
+              alt={p.imageAlt ?? `${p.title} preview`}
+              width={288}
+              height={160}
+              className="pointer-events-none absolute inset-0 z-0 h-full w-full object-cover object-center"
+              onError={() => setImgError(true)}
+            />
           ) : (
             <div className="font-serif text-2xl text-[var(--fg)] self-end opacity-90">{p.title}</div>
           )}

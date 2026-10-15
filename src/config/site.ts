@@ -246,6 +246,11 @@ projects: [
       "AstraDB is an embeddable storage engine built around 4 KB slotted pages and persistent indexing. It includes buffer-pool management with LRU eviction, dirty-page handling, and write-ahead logging.\n\nRecovery follows ARIES with analysis, redo, and undo, plus compensation log records and checkpointing. The log tail is validated with CRC32. The engine also includes multi-process fault injection and simulated fsync and pwrite failures.\n\nReported benchmarks: 427K+ point gets per second and 405K+ range scans per second.\n\nPositioning: database internals, persistence, crash consistency, and performance.",
     stack: ["C++20", "B+Tree", "WAL", "ARIES", "Buffer Pool", "LRU"],
     featured: true,
+    year: "2026",
+    links: {
+      source: "https://github.com/sumandey7684/AstraDB",
+    },
+    href: "/projects/astradb",
     image: "/projects/astradb.png",
     imageAlt: "AstraDB interface showing a semantic-space chart and search results.",
     categories: ["Systems", "Backend"],

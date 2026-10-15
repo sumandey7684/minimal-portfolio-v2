@@ -30,6 +30,7 @@ import { GithubActivity } from "@/sections/GithubActivity";
 
 import { WritingPage } from "@/pages/WritingPage";
 import { ReadmeHubPage } from "@/pages/ReadmeHubPage";
+import { AstraDBPage } from "@/pages/AstraDBPage";
 import { ContactPage } from "./pages/ContactPage";
 import { PrivacyPage } from "@/pages/PrivacyPage";
 import { TermsPage } from "@/pages/TermsPage";
@@ -110,6 +111,7 @@ function usePageMeta(pathname: string, is404: boolean) {
 const VALID_ROUTES = [
   "/",
   "/projects",
+  "/projects/astradb",
   "/projects/readmehub",
   "/experience",
   "/contact",
@@ -322,6 +324,7 @@ function AppContent() {
             element={<Projects isSearchable={true} />}
           />
 
+          <Route path="/projects/astradb" element={<AstraDBPage />} />
           <Route path="/projects/readmehub" element={<ReadmeHubPage />} />
 
           <Route

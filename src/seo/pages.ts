@@ -145,6 +145,28 @@ export const seoPages: SeoPage[] = [
     blocks: legalBlocks(termsIntro, termsSections),
   },
   {
+    path: "/projects/astradb",
+    title: "AstraDB — Suman Dey",
+    description:
+      "AstraDB is an in-memory C++ vector search engine with HNSW, a KD-tree, brute force, a local Ollama document path, and a browser PCA view.",
+    h1: "AstraDB",
+    robots: "index, follow",
+    inSitemap: true,
+    crumbs: [
+      { name: "Home", path: "/" },
+      { name: "Projects", path: "/projects" },
+      { name: "AstraDB", path: "/projects/astradb" },
+    ],
+    blocks: [
+      {
+        paragraphs: [
+          "AstraDB is an in-memory vector search engine in a single C++ translation unit. It serves HNSW, KD-tree, and brute-force search over HTTP, and a separate document index uses local Ollama embeddings.",
+          "The GitHub repository was created on 22 May 2026. The published tree has no test suite and no disk persistence. There is no published demo URL.",
+        ],
+      },
+    ],
+  },
+  {
     path: "/projects/readmehub",
     title: "ReadmeHub — Suman Dey",
     description:
