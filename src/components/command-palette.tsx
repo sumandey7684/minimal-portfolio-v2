@@ -167,7 +167,7 @@ export function CommandPalette({
       subtitle: p.blurb,
       icon: <Globe size={16} />,
       action: () => {
-        navigate(`/projects?search=${encodeURIComponent(p.title)}`);
+        navigate(p.href ?? `/projects?search=${encodeURIComponent(p.title)}`);
         handleClose();
       },
     })),

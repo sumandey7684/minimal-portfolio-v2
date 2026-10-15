@@ -29,6 +29,7 @@ import { Writing } from "@/sections/Writing";
 import { GithubActivity } from "@/sections/GithubActivity";
 
 import { WritingPage } from "@/pages/WritingPage";
+import { ReadmeHubPage } from "@/pages/ReadmeHubPage";
 import { ContactPage } from "./pages/ContactPage";
 import { PrivacyPage } from "@/pages/PrivacyPage";
 import { TermsPage } from "@/pages/TermsPage";
@@ -109,6 +110,7 @@ function usePageMeta(pathname: string, is404: boolean) {
 const VALID_ROUTES = [
   "/",
   "/projects",
+  "/projects/readmehub",
   "/experience",
   "/contact",
   "/privacy",
@@ -319,6 +321,8 @@ function AppContent() {
             path="/projects"
             element={<Projects isSearchable={true} />}
           />
+
+          <Route path="/projects/readmehub" element={<ReadmeHubPage />} />
 
           <Route
             path="/experience"

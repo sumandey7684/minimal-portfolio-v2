@@ -84,7 +84,7 @@ export const seoPages: SeoPage[] = [
     path: "/projects",
     title: "Projects — Suman Dey",
     description:
-      "Projects by Suman Dey, including AstraDB, LoopCode, Podcast Buddy, RailGaadi, Flare, and PDFly.",
+      "Projects by Suman Dey, including AstraDB, MeshPay, DeepTrace, Podcast Buddy, RailGaadi, and PDFly.",
     h1: "Projects",
     robots: "index, follow",
     inSitemap: true,
@@ -143,6 +143,28 @@ export const seoPages: SeoPage[] = [
     robots: "index, follow",
     inSitemap: true,
     blocks: legalBlocks(termsIntro, termsSections),
+  },
+  {
+    path: "/projects/readmehub",
+    title: "ReadmeHub — Suman Dey",
+    description:
+      "A fully client-side GitHub README generator for project and profile READMEs, with themes, live preview, and local persistence.",
+    h1: "ReadmeHub",
+    robots: "index, follow",
+    inSitemap: true,
+    crumbs: [
+      { name: "Home", path: "/" },
+      { name: "Projects", path: "/projects" },
+      { name: "ReadmeHub", path: "/projects/readmehub" },
+    ],
+    blocks: [
+      {
+        paragraphs: [
+          "A fully client-side GitHub README generator for project and profile READMEs, featuring 15 structurally distinct themes, live Markdown preview, a resizable split editor, 90+ technology badges, GitHub statistics widgets, automatic local persistence, and Markdown copy/download.",
+          "The GitHub repository was created in 2026. Processing stays in the browser. Drafts persist locally. There is no backend and no sign-up.",
+        ],
+      },
+    ],
   },
   {
     path: "/writing",

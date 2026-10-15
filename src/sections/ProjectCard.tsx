@@ -40,7 +40,7 @@ export function ProjectCard({ project: p, index = 0 }: { project: Project; index
                 <span className="rounded bg-amber-500/20 border border-amber-500/40 px-2 py-0.5 font-mono text-[9px] font-semibold uppercase tracking-wider text-amber-300 backdrop-blur-md">
                   • {p.status}
                 </span>
-              ) : p.links.live ? (
+              ) : p.links?.live ? (
                 <span className="rounded bg-emerald-500/20 border border-emerald-500/40 px-2 py-0.5 font-mono text-[9px] font-semibold uppercase tracking-wider text-emerald-300 backdrop-blur-md flex items-center gap-1">
                   <span className="relative flex size-1.5">
                     <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60" />
@@ -63,7 +63,7 @@ export function ProjectCard({ project: p, index = 0 }: { project: Project; index
             <div className="absolute -right-6 -bottom-3 w-56 h-32 sm:-right-12 sm:-bottom-5 sm:w-72 sm:h-40 rounded-lg border-4 border-[var(--bg)]/40 shadow-xl overflow-hidden group-hover:-right-4 group-hover:-bottom-1 sm:group-hover:-right-9 sm:group-hover:-bottom-2 transition-all duration-300 pointer-events-none">
               <img
                 src={p.image}
-                alt={`${p.title} preview`}
+                alt={p.imageAlt ?? `${p.title} preview`}
                 width={288}
                 height={160}
                 className="w-full h-full object-cover object-top"
@@ -96,7 +96,7 @@ export function ProjectCard({ project: p, index = 0 }: { project: Project; index
       {/* Tech Pills & Direct Links */}
       <div className="mt-4 flex items-center justify-between gap-3 pt-3 border-t border-[var(--line)]/50">
         <div className="flex flex-wrap gap-1.5">
-          {p.stack.map((t) => (
+          {(p.stack ?? []).map((t) => (
             <span
               key={t}
               className="rounded bg-[var(--chip)] px-2 py-0.5 font-mono text-[10.5px] text-[var(--muted)] border border-[var(--line)]/30"
@@ -106,23 +106,25 @@ export function ProjectCard({ project: p, index = 0 }: { project: Project; index
           ))}
         </div>
         <div className="flex shrink-0 items-center gap-2.5 text-[var(--soft)]">
-          {p.links.live && (
+          {p.links?.live && (
             <a
               href={p.links.live}
               target="_blank"
               rel="noopener noreferrer"
               aria-label={`${p.title} live site`}
+              onClick={(event) => event.stopPropagation()}
               className="transition-all duration-200 hover:-translate-y-0.5 hover:text-[var(--fg)]"
             >
               <Globe className="size-4" />
             </a>
           )}
-          {p.links.source && (
+          {p.links?.source && (
             <a
               href={p.links.source}
               target="_blank"
               rel="noopener noreferrer"
               aria-label={`${p.title} repository`}
+              onClick={(event) => event.stopPropagation()}
               className="transition-all duration-200 hover:-translate-y-0.5 hover:text-[var(--fg)]"
             >
               <GitHubIcon className="size-4" />

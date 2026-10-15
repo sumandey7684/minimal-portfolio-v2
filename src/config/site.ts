@@ -1,15 +1,28 @@
 
+export const projectCategories = [
+  "Frontend",
+  "Backend",
+  "Fullstack",
+  "AI/ML",
+  "Systems",
+  "Developer Tools",
+] as const;
+
+export type ProjectCategory = (typeof projectCategories)[number];
+
 export type Project = {
   title: string;
   blurb: string;
   story?: string;
-  stack: string[];
-  year: string;
-  links: { live?: string; source?: string };
+  stack?: string[];
+  year?: string;
+  links?: { live?: string; source?: string };
   featured?: boolean;
   status?: string;
   image?: string;
-  categories?: ("Frontend" | "Backend" | "Fullstack")[];
+  imageAlt?: string;
+  categories?: ProjectCategory[];
+  href?: string;
 };
 
 export type Job = {
@@ -232,22 +245,33 @@ projects: [
     story:
       "AstraDB is an embeddable storage engine built around 4 KB slotted pages and persistent indexing. It includes buffer-pool management with LRU eviction, dirty-page handling, and write-ahead logging.\n\nRecovery follows ARIES with analysis, redo, and undo, plus compensation log records and checkpointing. The log tail is validated with CRC32. The engine also includes multi-process fault injection and simulated fsync and pwrite failures.\n\nReported benchmarks: 427K+ point gets per second and 405K+ range scans per second.\n\nPositioning: database internals, persistence, crash consistency, and performance.",
     stack: ["C++20", "B+Tree", "WAL", "ARIES", "Buffer Pool", "LRU"],
-    year: "",
-    links: {},
     featured: true,
-    categories: ["Backend"],
+    image: "/projects/astradb.png",
+    imageAlt: "AstraDB interface showing a semantic-space chart and search results.",
+    categories: ["Systems", "Backend"],
   },
   {
-    title: "LoopCode",
+    title: "MeshPay",
     blurb:
-      "An agentic software engineering system that decomposes software goals into directed task graphs, executes independent tasks in parallel, and coordinates work through persistent state.",
+      "Simulated mesh-routed offline payments with deferred settlement.",
     story:
-      "LoopCode is an autonomous AI software engineering orchestrator. It plans work as a DAG, decomposes goals into tasks, and runs independent development tasks in parallel.\n\nExecution state is stored in SQLite so runs can resume. Tools cover compilation, linting, testing, and verification. The system indexes a codebase semantically and retrieves that context during execution. Failures are analyzed with retries, execution budgets, and automated replanning. Outputs and task status are structured and validated.\n\nPositioning: autonomous software engineering, AI agent orchestration, and reliable multi-step execution.",
-    stack: ["TypeScript", "Bun", "LangChain", "SQLite", "Tree-sitter", "LSP", "FastEmbed", "SQLite-Vec"],
-    year: "",
-    links: {},
+      "The interface is labeled Offline Payments and Mesh Simulation. It includes payment entry in INR, a mesh network topology, gossip and bridge controls, and a local H2 database.\n\nThe screen identifies the view as simulation mode.",
+    stack: ["H2"],
     featured: true,
-    categories: ["Backend"],
+    image: "/projects/meshpay.png",
+    imageAlt: "MeshPay simulation of mesh-routed offline payments.",
+    categories: ["Frontend", "Fullstack"],
+  },
+  {
+    title: "DeepTrace",
+    blurb:
+      "A deep packet inspection dashboard presented as a Phase 3 frontend shell. The screen uses temporary fixture data and states that no backend is integrated in this phase.",
+    story:
+      "The interface is labeled Deep Packet Inspection and includes a dashboard, blocking rules, engine performance, PCAP files, recent packets, and detected domains.\n\nThe screenshot labels this as a Phase 3 frontend shell with temporary fixture data and no backend integration.",
+    featured: true,
+    image: "/projects/deeptrace.png",
+    imageAlt: "DeepTrace deep packet inspection dashboard.",
+    categories: ["Frontend"],
   },
   {
     title: "Podcast Buddy",
@@ -256,10 +280,8 @@ projects: [
     story:
       "Podcast Buddy ingests live news and turns it into two-host audio episodes. Dialogue and episode content are generated with AI, speech is synthesized with Edge TTS, and audio is processed with FFmpeg.\n\nThe backend exposes asynchronous FastAPI endpoints. A Next.js frontend handles interaction and playback. The pipeline also uses Gemini, LangChain, and Hugging Face embeddings.\n\nPositioning: end-to-end AI product engineering and multimedia automation.",
     stack: ["Next.js", "FastAPI", "Gemini", "LangChain", "Hugging Face embeddings", "Edge TTS", "FFmpeg"],
-    year: "",
-    links: {},
     featured: true,
-    categories: ["Fullstack"],
+    categories: ["Fullstack", "AI/ML"],
   },
   {
     title: "RailGaadi",
@@ -268,22 +290,10 @@ projects: [
     story:
       "RailGaadi shows real-time train tracking and running status, ETA and delay information, and the current and next station. Routes are drawn on an interactive map with animated train markers, station highlighting, camera-follow mode, and map controls.\n\nThe interface integrates railway, weather, and geospatial services, including MapLibre, MapTiler, OpenWeather, OpenTopography, Overpass, and Turf.js. Layouts are responsive, and journey views can be shared.\n\nPositioning: frontend engineering, external API integration, and geospatial UI.",
     stack: ["React", "TypeScript", "REST APIs", "MapLibre", "MapTiler", "OpenWeather", "OpenTopography", "Overpass", "Turf.js"],
-    year: "",
-    links: {},
     featured: true,
+    image: "/projects/railgaadi.png",
+    imageAlt: "RailGaadi page for tracking trains in real time.",
     categories: ["Frontend", "Fullstack"],
-  },
-  {
-    title: "Flare",
-    blurb:
-      "A graph-first AI coding platform that combines codebase intelligence, semantic retrieval, structured project context, and tool orchestration for context-aware development workflows.",
-    story:
-      "Flare connects a code and knowledge graph with semantic retrieval across files, symbols, and dependencies. It keeps structured project metadata and execution history, and injects that context into AI planning and execution agents.\n\nTooling and external capabilities are integrated through the Model Context Protocol.\n\nPositioning: AI-assisted development, code intelligence, and semantic retrieval.",
-    stack: ["TypeScript", "React", "Node.js", "LLMs", "Vector Search", "MCP", "SQLite"],
-    year: "",
-    links: {},
-    featured: true,
-    categories: ["Fullstack"],
   },
   {
     title: "PDFly",
@@ -292,10 +302,33 @@ projects: [
     story:
       "PDFly supports multiple PDF operations through modular React and TypeScript components. The core workflow runs in the browser without a server dependency, with asynchronous processing and memory use aimed at large files.\n\nPositioning: browser-based tooling, frontend performance, and file processing.",
     stack: ["React", "TypeScript", "Node.js"],
-    year: "",
-    links: {},
     featured: true,
-    categories: ["Frontend"],
+    categories: ["Frontend", "Developer Tools"],
+  },
+  {
+    title: "ReadmeHub",
+    blurb:
+      "A fully client-side GitHub README generator for project and profile READMEs, featuring 15 structurally distinct themes, live Markdown preview, a resizable split editor, 90+ technology badges, GitHub statistics widgets, automatic local persistence, and Markdown copy/download.",
+    year: "2026",
+    links: {
+      live: "https://readme-hub.sumandey.in/",
+      source: "https://github.com/sumandey7684/readme-hub",
+    },
+    href: "/projects/readmehub",
+    categories: ["Frontend", "Developer Tools"],
+    stack: [
+      "React",
+      "TypeScript",
+      "Vite",
+      "Tailwind CSS",
+      "shadcn/ui",
+      "Framer Motion",
+      "Wouter",
+      "React Query",
+      "react-markdown",
+      "remark-gfm",
+      "pnpm",
+    ],
   },
   {
     title: "ChatWrapped",
@@ -304,8 +337,6 @@ projects: [
     story:
       "ChatWrapped turns an exported WhatsApp conversation into conversation statistics, message trends, activity patterns, and streaks. The dashboard includes interactive charts, PDF report generation, and client-side processing so the chat stays on the device.\n\nLayouts work on desktop and mobile.\n\nPositioning: data visualization, frontend architecture, and privacy-conscious UX.",
     stack: ["React", "JavaScript", "Data Visualization"],
-    year: "",
-    links: {},
     featured: false,
     categories: ["Frontend"],
   },
@@ -316,8 +347,6 @@ projects: [
     story:
       "Tale is built from reusable UI components and design-system-oriented layouts. It includes interactive cards and dashboards, progress insights, wellness journeys, and responsive product sections, with attention to typography, spacing, and visual hierarchy.\n\nPositioning: UI/UX implementation, design systems, and frontend development.",
     stack: ["React", "UI/UX", "Responsive Design"],
-    year: "",
-    links: {},
     featured: false,
     categories: ["Frontend"],
   },

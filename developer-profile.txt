@@ -199,50 +199,7 @@ Note:
 ## PROJECTS
 ================================================================================
 
-### 1. LoopCode — Autonomous AI Software Engineering Orchestrator
-
-Category:     Agentic AI, Developer Tools, Backend Engineering
-Technologies: TypeScript, Bun, LangChain, SQLite, Tree-sitter,
-              LSP, FastEmbed, SQLite-Vec
-
-Description:
-
-An agentic software engineering system designed to decompose software goals into directed task graphs, execute independent tasks in parallel, and coordinate work through persistent state.
-
-Key features:
-  - DAG-based task planning and task decomposition.
-  - Parallel execution of independent development tasks.
-  - Persistent SQLite state and resumable execution.
-  - Tool execution for compilation, linting, testing, and verification.
-  - Semantic codebase indexing and context retrieval.
-  - Failure analysis, retries, execution budgets, and automated replanning.
-  - Structured outputs and task-status validation.
-
-Positioning:
-  Autonomous software engineering, AI agent orchestration, and
-  reliable multi-step execution.
-
-### 2. Flare — Graph-First AI Coding and Development Platform
-
-Category:     AI Developer Tools, Full Stack, Code Intelligence
-Technologies: TypeScript, React, Node.js, LLMs, Vector Search,
-              MCP, SQLite
-
-Description:
-
-A graph-first AI coding platform that combines codebase intelligence, semantic retrieval, structured project context, and tool orchestration to support context-aware software development workflows.
-
-Key features:
-  - Code and knowledge graph integration.
-  - Semantic retrieval across files, symbols, and dependencies.
-  - Structured project metadata and execution history.
-  - Context injection for AI planning and execution agents.
-  - MCP-based tooling and external capability integration.
-
-Positioning:
-  AI-assisted development, code intelligence, and semantic retrieval.
-
-### 3. AstraDB — Embeddable B+Tree Storage Engine
+### 1. AstraDB — Embeddable B+Tree Storage Engine
 
 Category:     Systems Engineering, Database Internals, C++
 Technologies: C++20, B+Tree, WAL, ARIES, Buffer Pool, LRU
@@ -270,6 +227,32 @@ Note:
 
 Positioning:
   Database internals, persistence, crash consistency, and performance.
+
+### 2. MeshPay — Simulated Offline Mesh Payments
+
+Category:     Frontend, Fullstack
+Technologies: H2
+
+Description:
+
+Simulated mesh-routed offline payments with deferred settlement.
+
+The interface is labeled Offline Payments and Mesh Simulation. It includes payment entry in INR, a mesh network topology, gossip and bridge controls, and a local H2 database. The screen identifies the view as simulation mode.
+
+Year, repository URL, and live-demo URL are not established.
+
+### 3. DeepTrace — Deep Packet Inspection Dashboard
+
+Category:     Frontend
+Technologies: Not established. The screenshot does not name a framework.
+
+Description:
+
+A deep packet inspection dashboard presented as a Phase 3 frontend shell. The screen uses temporary fixture data and states that no backend is integrated in this phase.
+
+The interface is labeled Deep Packet Inspection and includes a dashboard, blocking rules, engine performance, PCAP files, recent packets, and detected domains.
+
+Year, repository URL, and live-demo URL are not established.
 
 ### 4. Podcast Buddy — AI News-to-Podcast Platform
 
@@ -333,7 +316,23 @@ Key features:
 Positioning:
   Browser-based tooling, frontend performance, and file processing.
 
-### 7. ChatWrapped — WhatsApp Chat Analytics
+### 7. ReadmeHub — Client-side GitHub README generator
+
+Category:     Frontend, Developer Tools
+Year:         2026 (GitHub repository created 12 May 2026)
+Technologies: React, TypeScript, Vite, Tailwind CSS, shadcn/ui,
+              Framer Motion, Wouter, React Query, react-markdown,
+              remark-gfm, pnpm
+Repository:   https://github.com/sumandey7684/readme-hub
+Live demo:    https://readme-hub.sumandey.in/
+
+Description:
+
+A fully client-side GitHub README generator for project and profile READMEs, featuring 15 structurally distinct themes, live Markdown preview, a resizable split editor, 90+ technology badges, GitHub statistics widgets, automatic local persistence, and Markdown copy/download.
+
+The published README also states that drafts are stored in localStorage, that there is no server and no sign-up, and that theme generation and preview run in the browser.
+
+### 8. ChatWrapped — WhatsApp Chat Analytics
 
 Category:     Frontend Engineering, Data Visualization
 Technologies: React, JavaScript, Data Visualization
@@ -354,7 +353,7 @@ Key features:
 Positioning:
   Data visualization, frontend architecture, and privacy-conscious UX.
 
-### 8. Tale — Wellness and Mental Well-being Platform
+### 9. Tale — Wellness and Mental Well-being Platform
 
 Category:     Frontend Engineering, UI/UX Design
 Technologies: React, UI/UX, Responsive Design
@@ -419,7 +418,7 @@ Full Stack Developer:
   TypeScript, FastAPI, Node.js, REST APIs, and databases.
 
 Agentic AI Engineer:
-  Emphasize LoopCode, Flare, LangGraph, LangChain, MCP,
+  Emphasize LangGraph, LangChain, MCP,
   semantic retrieval, tool calling, agent state, and verification.
 
 Applied AI/ML Engineer:
@@ -427,7 +426,7 @@ Applied AI/ML Engineer:
   Podcast Buddy, RAG, embeddings, FAISS, and Gemini.
 
 Backend Engineer:
-  Emphasize AstraDB, LoopCode, Flare, API engineering, persistence,
+  Emphasize AstraDB, API engineering, persistence,
   concurrency, SQLite, PostgreSQL, and system reliability.
 
 Software Development Engineer:
@@ -474,17 +473,20 @@ Core message:
 
 Featured project order for a general software engineering portfolio:
   1. AstraDB — demonstrates low-level engineering and database internals.
-  2. LoopCode — demonstrates agentic workflows and software automation.
-  3. Podcast Buddy — demonstrates applied AI and end-to-end product work.
-  4. RailGaadi — demonstrates full-stack development and API integration.
-  5. Flare — demonstrates code intelligence and AI developer tooling.
+  2. MeshPay — simulated mesh-routed offline payments. Details are limited to the screenshot.
+  3. DeepTrace — Phase 3 frontend shell. Details are limited to the screenshot.
+  4. Podcast Buddy — demonstrates applied AI and end-to-end product work.
+  5. RailGaadi — demonstrates full-stack development and API integration.
   6. PDFly — demonstrates practical browser-based application engineering.
+  7. ReadmeHub — client-side README generator. Repository created in 2026.
+  8. ChatWrapped — WhatsApp chat analytics.
+  9. Tale — wellness and mental well-being interface.
 
-For an AI-focused portfolio, prioritize LoopCode, Flare, Podcast Buddy, and AstraDB.
+For an AI-focused portfolio, prioritize Podcast Buddy and AstraDB.
 
 For a frontend-focused portfolio, prioritize RailGaadi, ChatWrapped, and Tale.
 
-For a backend or systems-focused portfolio, prioritize AstraDB, LoopCode, and Flare.
+For a backend or systems-focused portfolio, prioritize AstraDB.
 
 Final principle:
   Keep one consistent personal identity, but tailor the featured projects,

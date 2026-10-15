@@ -2,7 +2,7 @@ import { createPortal } from "react-dom";
 import { useEffect, useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Shell, SectionHeader } from "@/components/Layout";
-import { site, type Project } from "@/config/site";
+import { projectCategories, site, type Project, type ProjectCategory } from "@/config/site";
 import { ProjectCard } from "./ProjectCard";
 import {
   Search,
@@ -12,6 +12,8 @@ import {
 } from "lucide-react";
 import { GitHubIcon } from "@/components/icons";
 import { useNavigate } from "react-router-dom";
+
+const PROJECT_FILTERS = ["All", ...projectCategories] as const;
 
 export function Projects({
   isSearchable = false,
@@ -30,22 +32,8 @@ export function Projects({
 const displayedProjects = useMemo(() => {
   const filtered = site.projects.filter((p) => {
     if (
-      projectTab === "Frontend" &&
-      !p.categories?.includes("Frontend")
-    ) {
-      return false;
-    }
-
-    if (
-      projectTab === "Backend" &&
-      !p.categories?.includes("Backend")
-    ) {
-      return false;
-    }
-
-    if (
-      projectTab === "Fullstack" &&
-      !p.categories?.includes("Fullstack")
+      projectTab !== "All" &&
+      !p.categories?.includes(projectTab as ProjectCategory)
     ) {
       return false;
     }
@@ -56,7 +44,7 @@ const displayedProjects = useMemo(() => {
       return (
         p.title.toLowerCase().includes(q) ||
         p.blurb.toLowerCase().includes(q) ||
-        p.stack.some((t) =>
+        (p.stack ?? []).some((t) =>
           t.toLowerCase().includes(q)
         )
       );
@@ -101,8 +89,8 @@ const displayedProjects = useMemo(() => {
           heading={isSearchable ? "h1" : "h2"}
           aside={
             !isSearchable ? (
-              <div className="flex gap-1 rounded-lg border border-[var(--line)] bg-[var(--chip)] p-0.5">
-                {["All", "Frontend", "Backend", "Fullstack"].map(
+              <div className="flex max-w-full flex-wrap gap-1 rounded-lg border border-[var(--line)] bg-[var(--chip)] p-0.5">
+                {PROJECT_FILTERS.map(
                   (tab) => (
                     <button
                       key={tab}
@@ -149,8 +137,8 @@ const displayedProjects = useMemo(() => {
                 )}
               </div>
 
-              <div className="flex gap-1 rounded-lg border border-[var(--line)] bg-[var(--chip)] p-0.5">
-                {["All", "Frontend", "Backend", "Fullstack"].map(
+              <div className="flex flex-wrap gap-1 rounded-lg border border-[var(--line)] bg-[var(--chip)] p-0.5">
+                {PROJECT_FILTERS.map(
                   (tab) => (
                     <button
                       key={tab}
@@ -186,7 +174,13 @@ const displayedProjects = useMemo(() => {
                     ease: "easeOut",
                   }}
                   className="cursor-pointer"
-                  onClick={() => setActiveProject(p)}
+                  onClick={() => {
+                    if (p.href) {
+                      navigate(p.href);
+                      return;
+                    }
+                    setActiveProject(p);
+                  }}
                 >
                   <ProjectCard project={p} index={idx} />
                 </motion.div>
@@ -324,7 +318,7 @@ const displayedProjects = useMemo(() => {
                         <div className="relative aspect-[16/7] w-full overflow-hidden">
                           <img
                             src={activeProject.image}
-                            alt={activeProject.title}
+                            alt={activeProject.imageAlt ?? activeProject.title}
                             className="h-full w-full object-cover"
                           />
 
@@ -363,10 +357,10 @@ const displayedProjects = useMemo(() => {
                         {activeProject.blurb}
                       </p>
 
-                      {(activeProject.links.live ||
-                        activeProject.links.source) && (
+                      {(activeProject.links?.live ||
+                        activeProject.links?.source) && (
                         <div className="mt-6 flex flex-wrap gap-2">
-                          {activeProject.links.live && (
+                          {activeProject.links?.live && (
                             <a
                               href={activeProject.links.live}
                               target="_blank"
@@ -379,9 +373,9 @@ const displayedProjects = useMemo(() => {
                             </a>
                           )}
 
-                          {activeProject.links.source && (
+                          {activeProject.links?.source && (
                             <a
-                              href={activeProject.links.source}
+                              href={activeProject.links?.source}
                               target="_blank"
                               rel="noopener noreferrer"
                               onClick={(e) => e.stopPropagation()}
@@ -397,9 +391,9 @@ const displayedProjects = useMemo(() => {
                     </div>
 
                     {/* Project information */}
-                    <div className="grid sm:grid-cols-[1fr_260px]">
+                    <div className={(activeProject.stack?.length ?? 0) > 0 ? "grid sm:grid-cols-[1fr_260px]" : ""}>
                       {/* About */}
-                      <div className="border-b border-[var(--line)] sm:border-b-0 sm:border-r">
+                      <div className={`border-b border-[var(--line)] sm:border-b-0 ${(activeProject.stack?.length ?? 0) > 0 ? "sm:border-r" : ""}`}>
                         <div className="border-b border-[var(--line)] px-6 py-4 sm:px-8">
                           <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-[var(--muted)]">
                             About
@@ -428,7 +422,7 @@ const displayedProjects = useMemo(() => {
                         </div>
                       </div>
 
-                      {/* Tech Stack */}
+                      {(activeProject.stack?.length ?? 0) > 0 && (
                       <div>
                         <div className="border-b border-[var(--line)] px-6 py-4 sm:px-7">
                           <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-[var(--muted)]">
@@ -438,7 +432,7 @@ const displayedProjects = useMemo(() => {
 
                         <div className="p-6 sm:p-7">
                           <div className="flex flex-wrap gap-2">
-                            {activeProject.stack.map((tech) => (
+                            {(activeProject.stack ?? []).map((tech) => (
                               <span
                                 key={tech}
                                 className="rounded-md border border-[var(--line)] bg-[var(--chip)] px-2.5 py-2 text-[11px] text-[var(--fg)]"
@@ -449,6 +443,7 @@ const displayedProjects = useMemo(() => {
                           </div>
                         </div>
                       </div>
+                      )}
                     </div>
 
                     {/* Footer */}
