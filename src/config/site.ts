@@ -263,6 +263,7 @@ projects: [
       "The interface is labeled Offline Payments and Mesh Simulation. It includes payment entry in INR, a mesh network topology, gossip and bridge controls, and a local H2 database.\n\nThe screen identifies the view as simulation mode.",
     stack: ["H2"],
     featured: true,
+    href: "/projects/meshpay",
     image: "/projects/meshpay.png",
     imageAlt: "MeshPay simulation of mesh-routed offline payments.",
     categories: ["Frontend", "Fullstack"],

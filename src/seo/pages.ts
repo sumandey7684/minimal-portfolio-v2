@@ -167,6 +167,28 @@ export const seoPages: SeoPage[] = [
     ],
   },
   {
+    path: "/projects/meshpay",
+    title: "MeshPay — Suman Dey",
+    description:
+      "MeshPay is a local simulation of offline mesh payments with deferred settlement. The screen labels a local H2 database. No public repository or demo URL is confirmed.",
+    h1: "MeshPay",
+    robots: "index, follow",
+    inSitemap: true,
+    crumbs: [
+      { name: "Home", path: "/" },
+      { name: "Projects", path: "/projects" },
+      { name: "MeshPay", path: "/projects/meshpay" },
+    ],
+    blocks: [
+      {
+        paragraphs: [
+          "MeshPay is presented as a simulation of offline payments that move across nearby devices and settle later through a bridge. The screen labels the local database as H2.",
+          "No public GitHub repository, live demo URL, project year, or test suite was found. Encryption, replay protection, and reconciliation rules are not claimed beyond the labels on the screen.",
+        ],
+      },
+    ],
+  },
+  {
     path: "/projects/readmehub",
     title: "ReadmeHub — Suman Dey",
     description:
